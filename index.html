@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>心象之間｜蘇東平繪畫展</title>
+<meta name="description" content="心象之間——蘇東平繪畫展。以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4efe6;
+  --paper-2:#ebe4d7;
+  --ink:#2b2a27;
+  --ink-soft:#5d5a53;
+  --ink-faint:#8e897f;
+  --line:#d6cdbd;
+  --accent:#3f6b86;      /* 海的藍 */
+  --accent-2:#b5543a;    /* 屋頂的紅 */
+  --frame-1:#d9c7a0;
+  --frame-2:#b89c6a;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --latin:"Cormorant Garamond","Noto Serif TC",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-weight:300;
+  line-height:1.9;
+  letter-spacing:.04em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* 紙紋 */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .4 0 0 0 0 .32 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+main,header,footer{position:relative;z-index:1}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:var(--latin);font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-faint)}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px clamp(16px,4vw,48px);
+  background:rgba(244,239,230,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:border-color .4s,padding .4s;
+}
+.nav.scrolled{border-color:var(--line);padding-block:12px}
+.nav .brand{font-size:1rem;letter-spacing:.3em;font-weight:400}
+.nav ul{display:flex;gap:clamp(14px,3vw,36px);list-style:none;font-size:.88rem;letter-spacing:.18em}
+.nav ul a{position:relative;color:var(--ink-soft);transition:color .3s}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--ink);transform:scaleX(0);transition:transform .4s}
+.nav ul a:hover{color:var(--ink)}
+.nav ul a:hover::after{transform:scaleX(1)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding-top:64px}
+.hero img{width:100%;height:auto}
+.hero .scroll{
+  position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-family:var(--latin);font-size:.7rem;letter-spacing:.3em;color:var(--ink-soft);
+}
+.hero .scroll i{display:block;width:1px;height:38px;background:linear-gradient(var(--ink-soft),transparent);animation:drip 2.2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-quote{text-align:center;padding:72px 16px 0}
+.hero-quote p{font-size:clamp(1.05rem,2.2vw,1.35rem);letter-spacing:.24em;line-height:2.2;color:var(--ink-soft)}
+
+section{padding:clamp(80px,11vw,140px) 0}
+.sec-head{margin-bottom:48px}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400;letter-spacing:.16em;line-height:1.5;margin-top:10px}
+.brush{display:block;width:72px;height:8px;margin-top:20px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 8'%3E%3Cpath d='M1 5 C 18 2, 40 7, 71 3' stroke='%233f6b86' stroke-width='2.2' fill='none' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E") no-repeat}
+
+/* ---------- About ---------- */
+.about .grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,88px);align-items:center}
+.about figure{position:relative}
+.about figure img{width:100%;box-shadow:0 30px 60px -30px rgba(40,34,24,.45)}
+.about figure::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid var(--line);z-index:-1}
+.about h2{font-size:clamp(2rem,4.4vw,3.1rem)}
+.about .body p{color:var(--ink-soft);margin-bottom:1.3em;font-size:1.02rem;text-align:justify}
+.pull{margin-top:2em;padding:22px 0 22px 26px;border-left:2px solid var(--accent);
+  font-size:1.12rem;color:var(--ink);letter-spacing:.12em;line-height:2}
+
+/* ---------- Statement ---------- */
+.statement{background:var(--paper-2);border-block:1px solid var(--line)}
+.statement .intro{max-width:760px}
+.statement .intro p{color:var(--ink-soft);margin-bottom:1.2em;font-size:1.04rem}
+.statement .intro p.lead{font-size:1.2rem;color:var(--ink);line-height:2.1}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:1px solid var(--line)}
+.pillar{padding:34px 26px 10px;border-right:1px solid var(--line)}
+.pillar:last-child{border-right:0}
+.pillar .n{font-family:var(--latin);font-size:2.2rem;color:var(--accent);font-style:italic;line-height:1}
+.pillar h3{font-size:1.4rem;font-weight:400;letter-spacing:.3em;margin:18px 0 10px}
+.pillar p{font-size:.95rem;color:var(--ink-soft);line-height:1.9}
+
+/* ---------- Works ---------- */
+.works .sec-head p{color:var(--ink-soft);max-width:560px;margin-top:14px}
+.seasons{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:72px}
+.season{
+  position:relative;display:block;cursor:pointer;overflow:hidden;
+  border:1px solid var(--line);background:#ddd;aspect-ratio:16/8;
+  font:inherit;color:inherit;text-align:left;
+}
+.season img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.75) sepia(.15) brightness(.95);transition:filter .7s, transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.season::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,239,230,.05) 30%,rgba(244,239,230,.55));transition:opacity .6s}
+.season .label{position:absolute;left:22px;top:22px;z-index:2;background:rgba(244,239,230,.92);padding:12px 20px 10px}
+.season .label .eyebrow{display:block;font-size:.7rem;color:var(--ink-faint)}
+.season .label strong{display:block;font-weight:400;font-size:1.6rem;letter-spacing:.3em;line-height:1.6}
+.season .label small{display:block;font-size:.8rem;color:var(--ink-soft);letter-spacing:.1em}
+.season .count{position:absolute;right:20px;bottom:16px;z-index:2;font-family:var(--latin);font-style:italic;font-size:1rem;color:var(--ink)}
+.season:hover img,.season.active img{filter:none;transform:scale(1.04)}
+.season.active{outline:1px solid var(--ink);outline-offset:6px}
+.season.active::after{opacity:.4}
+
+.viewer{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:center}
+.frame{
+  position:relative;padding:clamp(14px,2.2vw,26px);
+  background:linear-gradient(135deg,#e8d9b8,var(--frame-1) 40%,var(--frame-2));
+  box-shadow:0 2px 0 rgba(255,255,255,.5) inset, 0 40px 60px -30px rgba(50,38,20,.55), 0 10px 20px -10px rgba(50,38,20,.3);
+}
+.frame .mat{background:#fbf8f2;padding:clamp(14px,2.6vw,34px);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06), inset 2px 3px 8px rgba(0,0,0,.12)}
+.stage{position:relative;display:flex;align-items:center;justify-content:center;height:min(62vh,600px);cursor:zoom-in}
+.stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:opacity .55s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+.stage img.out{opacity:0;transform:scale(.985)}
+.plaque{position:absolute;left:50%;bottom:-16px;transform:translateX(-50%);background:#2f2c27;color:#e9dfc8;font-size:.72rem;letter-spacing:.3em;padding:5px 16px;font-family:var(--latin);white-space:nowrap}
+
+.caption .idx{font-family:var(--latin);font-size:.9rem;letter-spacing:.3em;color:var(--ink-faint)}
+.caption .idx b{color:var(--accent);font-weight:500;font-size:1.35rem}
+.caption h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;letter-spacing:.14em;line-height:1.5;margin:14px 0 6px}
+.caption .place{font-size:.88rem;color:var(--ink-faint);letter-spacing:.08em;margin-bottom:26px}
+.caption .place em{font-family:var(--latin);font-style:italic;font-size:1rem}
+.caption .poem{font-size:1.05rem;line-height:2.15;color:var(--ink-soft);text-align:justify;min-height:9.6em}
+.caption .fade{transition:opacity .45s ease, transform .6s ease}
+.caption.out .fade{opacity:0;transform:translateY(8px)}
+.controls{display:flex;align-items:center;gap:12px;margin-top:34px}
+.btn{
+  font:inherit;font-size:.86rem;letter-spacing:.2em;color:var(--ink);
+  background:transparent;border:1px solid var(--ink-faint);padding:10px 22px;cursor:pointer;transition:background .3s,color .3s,border-color .3s
+}
+.btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.progress{flex:1;height:1px;background:var(--line);position:relative;margin-left:10px}
+.progress span{position:absolute;left:0;top:-1px;height:3px;background:var(--accent);transition:width .6s ease}
+
+.strip{display:flex;gap:10px;overflow-x:auto;margin-top:64px;padding:6px 2px 14px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.strip button{flex:0 0 auto;width:96px;height:72px;border:0;padding:0;cursor:pointer;background:#fff;opacity:.5;filter:grayscale(.6);transition:opacity .3s,filter .3s,transform .3s;scroll-snap-align:center;outline:1px solid var(--line)}
+.strip button img{width:100%;height:100%;object-fit:cover}
+.strip button:hover{opacity:.9;filter:none}
+.strip button.on{opacity:1;filter:none;outline:2px solid var(--ink);transform:translateY(-3px)}
+
+/* ---------- Closing ---------- */
+.closing{text-align:center}
+.closing h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:400;letter-spacing:.2em;line-height:1.8;margin:18px 0 28px}
+.closing p{color:var(--ink-soft);max-width:620px;margin:0 auto;font-size:1.04rem;line-height:2.2}
+.closing .sig{margin-top:44px;font-family:var(--latin);font-style:italic;font-size:1.3rem;color:var(--ink-faint);letter-spacing:.1em}
+footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font-size:.8rem;color:var(--ink-faint);letter-spacing:.2em}
+
+/* ---------- Lightbox ---------- */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(24,22,19,.94);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{max-width:94vw;max-height:88vh;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lightbox .x{position:absolute;top:16px;right:20px;background:none;border:0;color:#e9dfc8;font-size:2rem;cursor:pointer;line-height:1}
+.lightbox .cap{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#cfc5b0;font-size:.85rem;letter-spacing:.2em}
+.lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#e9dfc8;font-size:2.4rem;cursor:pointer;padding:20px;opacity:.6}
+.lightbox .lb-nav:hover{opacity:1}
+.lightbox .prev{left:4px}.lightbox .next{right:4px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1.1s ease, transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .about .grid,.viewer{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr 1fr}
+  .pillar:nth-child(2){border-right:0}
+  .pillar:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .stage{height:min(56vh,520px)}
+  .caption .poem{min-height:0}
+}
+@media (max-width:600px){
+  .nav ul{gap:14px;font-size:.78rem;letter-spacing:.1em}
+  .nav .brand{font-size:.9rem;letter-spacing:.2em}
+  .nav ul li{white-space:nowrap}
+  .hero .scroll{display:none}
+  .seasons{grid-template-columns:1fr;gap:16px}
+  .season{aspect-ratio:16/9}
+  .season .label strong{font-size:1.3rem}
+  .pillars{grid-template-columns:1fr}
+  .pillar{border-right:0!important;border-bottom:1px solid var(--line)}
+  .stage{height:auto;min-height:220px;max-height:62vh}
+  .stage img{max-height:60vh}
+  .strip button{width:72px;height:54px}
+  .controls .btn{padding:9px 16px}
+}
+@media (max-width:380px){
+  .nav{padding-inline:12px}
+  .nav ul{gap:10px;font-size:.72rem;letter-spacing:.04em}
+  .nav .brand{letter-spacing:.1em}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top">心象之間</a>
+  <ul>
+    <li><a href="#about">關於作者</a></li>
+    <li><a href="#statement">創作理念</a></li>
+    <li><a href="#works">作品一覽</a></li>
+  </ul>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-bottom:0">
+    <img src="images/banner.jpg" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
+    <a class="scroll" href="#about">SCROLL<i></i></a>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="wrap grid">
+      <figure class="reveal"><img src="images/artist.jpg" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy"></figure>
+      <div class="body reveal">
+        <span class="eyebrow">About the Artist</span>
+        <h2 class="sec-head" style="margin:10px 0 34px;font-weight:400;letter-spacing:.16em;line-height:1.6">醫者看見腦，<br>畫者看見心。</h2>
+        <p>蘇東平長年深耕精神醫學與腦影像領域。臨床與研究，使他習慣在表象之外，理解情緒、感知與人的內在世界；而當他拿起畫筆，這份凝視離開診間與影像，走入城市、山海、旅途與日常。</p>
+        <p>這些作品不追求精準複製眼前的景物，而更像是一段段被記住的感受：線條有時急促、有時安靜，色彩偶爾只在灰階中留下幾筆，像情緒在理性世界裡留下的痕跡。</p>
+        <p class="pull">「以醫者之心理解生命，<br>以畫者之筆傳遞對世界的善良與溫柔。」</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statement -->
+  <section class="statement" id="statement">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Curatorial Statement</span>
+        <h2>心象之間</h2>
+        <span class="brush"></span>
+      </div>
+      <div class="intro reveal">
+        <p class="lead">「心象」不是單純的風景，而是景物經過記憶、情緒與觀看之後，在心裡留下的形狀。</p>
+        <p>這場展覽將「精神醫學的凝視」與「旅途中的速寫」放在同一個空間裡。它們看似分屬科學與藝術，卻都在做相似的事——試著理解眼前看得見的表象，以及那些尚未被說出的內在。</p>
+      </div>
+      <div class="pillars reveal">
+        <div class="pillar"><div class="n">01</div><h3>凝視</h3><p>從觀察開始，讓景物在紙上慢慢顯影。</p></div>
+        <div class="pillar"><div class="n">02</div><h3>感知</h3><p>不只描繪形體，也保留當下的情緒與溫度。</p></div>
+        <div class="pillar"><div class="n">03</div><h3>記憶</h3><p>旅行片段成為個人記憶，也成為時間的證詞。</p></div>
+        <div class="pillar"><div class="n">04</div><h3>溫柔</h3><p>用不喧嘩的線條，看待人與世界的複雜。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works -->
+  <section class="works" id="works">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Selected Works</span>
+        <h2>作品集</h2>
+        <span class="brush"></span>
+        <p>先選擇一段季節旅程，再沿著畫框裡的光與手寫題記，一幅一幅慢慢觀看。</p>
+      </div>
+
+      <div class="seasons reveal" role="tablist">
+        <button class="season" data-set="greece" role="tab">
+          <img src="images/cover-greece.jpg" alt="Allura 郵輪航線：羅馬、阿瑪菲、卡塔尼亞、卡塔科隆、聖托里尼、米洛斯、米克諾斯、雅典" loading="lazy">
+          <span class="label"><span class="eyebrow">Spring · 2026</span><strong>春・希臘</strong><small>從羅馬出航，一路漂向愛琴海</small></span>
+          <span class="count">24 works</span>
+        </button>
+        <button class="season" data-set="iceland" role="tab">
+          <img src="images/cover-iceland.jpg" alt="冰島環島路線地圖" loading="lazy">
+          <span class="label"><span class="eyebrow">Summer · 2025</span><strong>夏・冰島</strong><small>環島北國，兼收旅途中的其他記憶</small></span>
+          <span class="count">23 works</span>
+        </button>
+      </div>
+
+      <div class="viewer reveal">
+        <div class="frame">
+          <div class="mat">
+            <div class="stage" id="stage" title="點擊放大觀看">
+              <img id="art" src="" alt="">
+            </div>
+          </div>
+          <div class="plaque" id="plaque">T. P. SU</div>
+        </div>
+        <div class="caption" id="caption">
+          <div class="fade">
+            <div class="idx"><b id="idx">01</b> / <span id="total">24</span></div>
+            <h3 id="title"></h3>
+            <div class="place" id="place"></div>
+            <p class="poem" id="poem"></p>
+          </div>
+          <div class="controls">
+            <button class="btn" id="prev" aria-label="上一幅">上一幅</button>
+            <button class="btn" id="next" aria-label="下一幅">下一幅</button>
+            <div class="progress"><span id="bar"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strip" id="strip" aria-label="作品縮圖"></div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="closing" id="closing" style="border-top:1px solid var(--line)">
+    <div class="wrap reveal">
+      <span class="eyebrow">Between the Inner World and the Real World</span>
+      <h2>在心與世界之間，<br>留下觀看的痕跡。</h2>
+      <p>有些風景被相機保存，有些被記憶改寫。東平選擇用紙與筆，把當下留在介於真實與心象之間的位置。</p>
+      <div class="sig">— T. P. Su</div>
+    </div>
+  </section>
+</main>
+
+<footer>心象之間 · 蘇東平繪畫展　|　Heart Imagery · Paintings by Tung-Ping Su</footer>
+
+<div class="lightbox" id="lb" aria-hidden="true">
+  <button class="x" id="lbx" aria-label="關閉">×</button>
+  <button class="lb-nav prev" id="lbp" aria-label="上一幅">‹</button>
+  <img id="lbimg" src="" alt="">
+  <button class="lb-nav next" id="lbn" aria-label="下一幅">›</button>
+  <div class="cap" id="lbcap"></div>
+</div>
+
+<script>
+const WORKS = {
+  greece: [
+    {t:"雲層之下", p:"德國 · 慕尼黑上空", d:"2026.04.27", m:"飛機還沒降落，大地先攤成一張地圖。綠是田，藍是河，旅人還懸在半空，心卻已先一步著陸——旅程，總是從俯瞰開始。"},
+    {t:"遠方的鐘樓", p:"義大利 · 羅馬，遠眺三一教堂", d:"2026.04.30", m:"隔著一整片樹影看鐘樓，像隔著多年看一段往事。近處的枝葉黑得用力，遠方的屋頂只輕輕上了一點橘——那是記憶願意留下的溫度。"},
+    {t:"千泉之息", p:"義大利 · 羅馬近郊，千泉宮", d:"2026.04.29", m:"泉水在石階間奔流了幾百年，柏樹靜靜站成守候的姿勢。畫者只取一抹藍綠，讓喧嘩的水聲，在紙上慢慢安靜下來。"},
+    {t:"城堡入口", p:"義大利 · 布拉恰諾城堡", d:"2026.04.30", m:"石牆高聳，人影細小。走進古堡的那一刻，時間的重量從石縫間落下，而行人仍步履輕快，彷彿歷史也允許我們，只是路過。"},
+    {t:"懸崖上的村落", p:"義大利 · 阿瑪菲海岸", d:"2026.05.01", m:"紅屋頂沿著山脊排成一行小字，寫在海與天之間。懸崖很陡，生活卻很穩；人們把家安放在最險的地方，好看見最遼闊的海。"},
+    {t:"迴廊的光", p:"義大利 · 阿瑪菲海岸，魯佛洛別墅", d:"2026.05.01", m:"長廊的盡頭，有一扇綠色的光。一位女子駐足，彷彿在等某段旋律重新響起。拱門層層後退，像一句一直沒說完的思念。"},
+    {t:"火山與海灣", p:"義大利 · 西西里，陶爾米納與埃特納火山", d:"2026.05.02", m:"埃特納山在遠方吐著一縷輕煙，海灣彎成一道溫柔的弧。在沉睡與甦醒之間，大地也有它自己的呼吸節奏。"},
+    {t:"劇場的回聲", p:"義大利 · 西西里，古劇場", d:"2026.05.01", m:"磚紅的拱門仍站在原地，遠山覆著薄雪，觀眾換了一代又一代。畫中的人影坐上石階，替兩千年前的掌聲，延續一場未散的演出。"},
+    {t:"起跑線之外", p:"希臘 · 卡塔科隆，奧林匹亞古運動場", d:"2026.05.03", m:"奧林匹亞的跑道上，風比人先跑完全程。一道細長的線劃開土地——那是古人的競逐，也是今日旅人緩步走過的沉默。"},
+    {t:"奧林匹亞的雲", p:"希臘 · 卡塔科隆，奧林匹亞", d:"2026.05.03", m:"炭筆把天空壓得很低，雲像未落下的雨，也像未說出口的心事。地平線一抹深黑，把喧囂留給過去，把靜默留給此刻。"},
+    {t:"還願之柱", p:"希臘 · 奧林匹亞，還願紀念柱", d:"2026.05.03", m:"一根石柱孤身站立，身後是綠意與傾頹的遺跡。它曾承載過誰的祈願？千年之後仍有人為它停步，像在替陌生人，說完一句禱詞。"},
+    {t:"泊在火山灣", p:"希臘 · 聖托里尼，Allura 號停泊", d:"2026.05.04", m:"大船在火山口留下的海灣裡靜靜停泊，天邊只燃起一線紅。整張畫幾乎都是灰，唯獨那道暮色，像心裡不肯熄滅的一盞燈。"},
+    {t:"白浪劃過", p:"希臘 · 聖托里尼海上", d:"2026.05.04", m:"一艘小艇劃開海面，留下細細的白痕。遠山只用幾根線輕描，像記憶在追趕眼前的速度——景物走得太快，心卻想慢一點。"},
+    {t:"黑島與白船", p:"希臘 · 聖托里尼，活火山與 Allura 號", d:"2026.05.04", m:"活火山是一塊沉默的黑，郵輪是一座漂浮的白。天邊的粉紅與青綠在兩者之間交會，彷彿理性與情緒，終於在同一片海上和解。"},
+    {t:"藍頂之下", p:"希臘 · 聖托里尼，東正教教堂", d:"2026.05.04", m:"藍色圓頂像一滴被海染過的天空，落在白牆之上。花在窗邊開，船在灣裡停——那是一種不必祈禱，也能感到被祝福的時刻。"},
+    {t:"落日的刻度", p:"希臘 · 聖托里尼，日落", d:"2026.05.04", m:"太陽沉入島嶼的剪影，顏色一層一層退場：黃、橙、紅，再到海的藍。畫者沒有留住夕陽，他留住的，是夕陽離開時心裡那一陣暖。"},
+    {t:"並肩看夕陽的人", p:"希臘 · 聖托里尼，傍晚六點", d:"2026.05.04", m:"最美的風景前，總有一排背影。他們不說話，只是並肩坐著，把同一個黃昏收進各自的人生。原來被畫下的不只是落日，還有陪伴。"},
+    {t:"米洛斯的藍門", p:"希臘 · 米洛斯島，巷弄", d:"2026.05.05", m:"藍門半掩，紅花探頭，小巷的白牆把陽光折得柔軟。島上的日子大概就是這樣：門不必全開，也不必緊閉，留一道縫給風，也給陌生人。"},
+    {t:"九重葛的階梯", p:"希臘 · 米洛斯島", d:"2026.05.05", m:"紫色藤蔓沿著白牆恣意攀爬，像一筆一筆不受控制的情緒，卻恰好落在藍窗與白階之間。生命的姿態，本來就不必整齊。"},
+    {t:"無臂的維納斯", p:"希臘 · 米洛斯島，維納斯像", d:"2026.05", m:"她在這座島上被人發現，如今只剩一座複製的身影守著原地。失去的雙臂，反而讓人看見更多——完整，有時正是從缺憾開始。"},
+    {t:"等風的風車", p:"希臘 · 米克諾斯島", d:"2026.05.05", m:"風車在山丘上排成一列，像一群安靜的老人，等著同一陣風。港邊人來人往，它們只負責記得：這座島，曾經靠風活著。"},
+    {t:"航向雅典", p:"希臘 · Allura 號航向雅典", d:"2026.05.06", m:"最後一段航程，天邊只剩一道紅。海很寬，岸很淡；船即將靠港，心卻還在海上漂著——有些告別，是用灰色畫成的。"},
+    {t:"旅伴的背影", p:"冰島 · 維克，旅館外的散步", d:"2025.08.26", m:"一位旅伴背著手，沿小路慢慢走遠，遠方的長屋與近處的草，都被鉛筆輕輕安放。原來旅行最動人的不是目的地，而是有人陪你走這一段。"},
+    {t:"甲板上的剪影", p:"旅途中 · 海上黃昏", d:"", m:"黃昏把每個人都染成黑色的剪影，只有天邊還留著一點粉。大家倚著欄杆看同一片海，各自想著回不去的地方，與還想再去的地方。"}
+  ],
+  iceland: [
+    {t:"羊角村的紅舟", p:"荷蘭 · 羊角村", d:"2025.10.12", m:"水道安靜，茅草屋低低伏在樹影裡。兩艘紅色小船停在岸邊，像村子在灰色的午後，偷偷留下的兩下心跳。"},
+    {t:"柳下的小橋", p:"荷蘭 · 羊角村", d:"2025.10.10", m:"大樹把枝葉垂進水裡，小橋把兩岸輕輕牽起。紅屋頂與藍船只佔了畫面一角，卻足以讓整片灰色，有了家的溫度。"},
+    {t:"列隊的守望者", p:"荷蘭 · 風車村，四百年前的風車", d:"2025.10.11", m:"風車沿著運河一字排開，四百年來守著低於海平面的土地。它們不言不語，只是轉動——堅持，有時就是這麼安靜的一件事。"},
+    {t:"京都車站", p:"日本 · 京都", d:"2015.07.29", m:"鋼骨、玻璃、人潮與巴士，被密密的線條一一收好。十年前的夏天，旅人在車站前停步，把一座城市的匆忙，畫成一頁可以慢慢讀的日記。"},
+    {t:"露易絲湖", p:"加拿大 · 露易絲湖", d:"2013.08.11", m:"山的稜線用棕色筆尖細細刻出，湖面卻只留白。最澄澈的東西往往畫不出來——於是畫者選擇留白，讓觀者自己把那片藍填進去。"},
+    {t:"太陽航海者", p:"冰島 · 雷克雅維克，維京船鋼雕", d:"2025.08.27", m:"鋼鐵的骨架朝海昂首，像一艘只剩夢想的船。維京人的遠航早已結束，但每個站在它面前的人，心裡都還有一片想去的海。"},
+    {t:"向上與向外", p:"冰島 · 雷克雅維克，哈特格林姆斯大教堂與萊夫像", d:"2025.08.28", m:"教堂的線條直指天空，雕像裡的航海家望向遠方。一個向上，一個向外——人類所有的嚮往，大概就是這兩個方向。"},
+    {t:"峽灣的紅船", p:"冰島 · 錫格呂菲厄澤峽灣", d:"2025.08.21", m:"峽灣把山壓得很低，天空灰得很深，只有一艘紅船浮在水面。在北方的寂靜裡，一點紅，就是全部的勇氣。"},
+    {t:"北緯六十六度的清晨", p:"冰島 · 北部，旅館外", d:"2025.08.22", m:"一棵樹、一輛巴士、一片空曠的地平線。旅人在清晨等待出發，北方的光很淡，淡得讓人聽得見自己的呼吸。"},
+    {t:"眾神瀑布 · 之一", p:"冰島 · 眾神瀑布", d:"2025.08.22", m:"傳說人們曾把舊神像投入這道瀑布，從此改換信仰。鉛筆的線條急促而重疊，像水聲，也像一個時代轉身時的轟鳴。"},
+    {t:"眾神瀑布 · 之二", p:"冰島 · 眾神瀑布", d:"2025.08.22", m:"退後一步再看，瀑布成了一道橫亙的白。激流仍在，只是遠了；有些震撼，要隔著一點距離，才看得清全貌。"},
+    {t:"等待極光", p:"冰島 · 埃伊爾斯塔濟", d:"2025.08.23", m:"旅館靜靜坐在山丘下，前方的線條像光一樣散開。那一夜也許沒有看見極光，但等待本身，已經讓夜空有了顏色。"},
+    {t:"倒影之山", p:"冰島 · 東南，蝙蝠山", d:"2025.08.24", m:"山與倒影在水面相接，分不清哪一半才是真的。就像記憶——我們看見的世界，總有一半，是心裡映照出來的。"},
+    {t:"冰河湖的黃昏", p:"冰島 · 傑古沙龍冰河湖", d:"2025.08.24", m:"浮冰從冰河斷裂，緩緩漂向大海。它們凝固了千年，終究也要離開。畫者用柔軟的灰，送別這些慢慢融化的時間。"},
+    {t:"羽毛峽谷 · 之一", p:"冰島 · 羽毛峽谷", d:"2025.08.24", m:"炭黑的岩壁一層層疊起，峽谷像被時間撕開的一道裂縫。重筆與留白相互對峙，像心裡同時存在的沉重與輕盈。"},
+    {t:"羽毛峽谷 · 之二", p:"冰島 · 羽毛峽谷", d:"2025.08.25", m:"從高處俯看，峽谷像一根羽毛的骨幹，兩側岩脊是羽枝。大地用一萬年的水，寫下這道既柔軟又鋒利的筆畫。"},
+    {t:"為冬天捲起的草", p:"冰島 · 南部，維克", d:"2025.08.26", m:"牧草被捲成一顆顆白色的球，散落在田野上，等著冬天。最平凡的勞動，也是一種對未來的溫柔承諾。"},
+    {t:"綠屋頂", p:"冰島 · 南部，維克", d:"2025.08.26", m:"遼闊的灰色原野上，一小片綠是某戶人家的屋頂。在這麼大的天地裡，人只要一點點顏色，就能證明自己曾經存在。"},
+    {t:"黃金瀑布", p:"冰島 · 黃金瀑布，近間歇泉", d:"2025.08.26", m:"大地突然斷裂，河水一階一階墜入深谷。圍欄邊站著小小的人影——在自然面前，謙卑是最誠實的姿態。"},
+    {t:"夜十點的紅教堂", p:"冰島 · 維克教堂，黑沙灘", d:"2025.08.27", m:"晚上十點，北國的天仍亮著。紅色屋頂立在灰白的小鎮上方，像一句輕聲的晚禱，守護黑沙灘邊的每一個夜晚。"},
+    {t:"通往教堂的路", p:"冰島 · 紅頂教堂", d:"2025.09.07", m:"所有的線條都朝同一個方向奔去，盡頭是一座小小的紅教堂。有些路很長，但只要遠方有一點紅，人就願意一直走下去。"},
+    {t:"水中之劍", p:"冰島 · 科爾格拉法峽灣大橋", d:"2025.09.20", m:"一座長橋筆直劃過峽灣，像一把橫放在水面的劍。它切開了海，卻也連起兩岸——分隔與相連，原來是同一件事。"},
+    {t:"沉睡的火山口", p:"冰島 · 火山口與小島", d:"2025.09.20", m:"火山口像大地闔上的眼睛，曾經沸騰，如今只盛著雨水與青草。所有激烈的過往，終會沉靜成一處可以凝望的風景。"}
+  ]
+};
+// 圖檔路徑
+WORKS.greece.forEach((w,i)=>w.src=`images/greece/g${String(i+1).padStart(2,"0")}.jpg`);
+WORKS.iceland.forEach((w,i)=>w.src=`images/iceland/i${String(i+2).padStart(2,"0")}.jpg`);
+const SET_LABEL = {greece:"Spring 2026 · 春・希臘", iceland:"Summer 2025 · 夏・冰島"};
+
+const $ = id => document.getElementById(id);
+const art=$("art"), cap=$("caption"), strip=$("strip");
+let set="greece", i=0, busy=0;
+
+function pad(n){return String(n).padStart(2,"0")}
+function buildStrip(){
+  strip.innerHTML="";
+  WORKS[set].forEach((w,k)=>{
+    const b=document.createElement("button");
+    b.setAttribute("aria-label",`${pad(k+1)} ${w.t}`);
+    b.innerHTML=`<img src="${w.src}" alt="" loading="lazy">`;
+    b.onclick=()=>go(k);
+    strip.appendChild(b);
+  });
+}
+function render(){
+  const list=WORKS[set], w=list[i];
+  $("idx").textContent=pad(i+1);
+  $("total").textContent=pad(list.length);
+  $("title").textContent=w.t;
+  $("place").innerHTML=`${w.p}${w.d?`　<em>${w.d}</em>`:""}`;
+  $("poem").textContent=w.m;
+  $("plaque").textContent=`T. P. SU · ${pad(i+1)}`;
+  $("bar").style.width=`${(i+1)/list.length*100}%`;
+  art.alt=`${w.t}——${w.p}`;
+  [...strip.children].forEach((b,k)=>b.classList.toggle("on",k===i));
+  const on=strip.children[i];
+  if(on) strip.scrollTo({left:on.offsetLeft-strip.clientWidth/2+on.clientWidth/2,behavior:"smooth"});
+  // 預載相鄰
+  [list[(i+1)%list.length],list[(i-1+list.length)%list.length]].forEach(n=>{const im=new Image();im.src=n.src});
+}
+function go(k){
+  const list=WORKS[set];
+  k=(k+list.length)%list.length;
+  const token=++busy; i=k;
+  art.classList.add("out"); cap.classList.add("out");
+  setTimeout(()=>{
+    if(token!==busy) return;
+    const next=new Image();
+    next.onload=next.onerror=()=>{
+      if(token!==busy) return;
+      art.src=list[i].src; render();
+      requestAnimationFrame(()=>{art.classList.remove("out");cap.classList.remove("out")});
+      if(lb.classList.contains("open")) openLB();
+    };
+    next.src=list[i].src;
+  },380);
+}
+function chooseSet(s,scroll){
+  set=s; i=0;
+  document.querySelectorAll(".season").forEach(b=>{
+    const on=b.dataset.set===s; b.classList.toggle("active",on); b.setAttribute("aria-selected",on);
+  });
+  buildStrip();
+  go(0);
+  if(scroll) document.querySelector(".viewer").scrollIntoView({behavior:"smooth",block:"center"});
+}
+document.querySelectorAll(".season").forEach(b=>b.onclick=()=>chooseSet(b.dataset.set,true));
+$("prev").onclick=()=>go(i-1);
+$("next").onclick=()=>go(i+1);
+
+// Lightbox
+const lb=$("lb");
+function openLB(){const w=WORKS[set][i];$("lbimg").src=w.src;$("lbimg").alt=w.t;$("lbcap").textContent=`${pad(i+1)}　${w.t}　·　${w.p}`;lb.classList.add("open");lb.setAttribute("aria-hidden","false")}
+function closeLB(){lb.classList.remove("open");lb.setAttribute("aria-hidden","true")}
+$("stage").onclick=openLB;
+$("lbx").onclick=closeLB;
+$("lbp").onclick=e=>{e.stopPropagation();go(i-1)};
+$("lbn").onclick=e=>{e.stopPropagation();go(i+1)};
+lb.onclick=e=>{if(e.target===lb)closeLB()};
+
+// 鍵盤
+document.addEventListener("keydown",e=>{
+  const inView=lb.classList.contains("open")||(()=>{const r=document.querySelector(".viewer").getBoundingClientRect();return r.top<innerHeight&&r.bottom>0})();
+  if(!inView) return;
+  if(e.key==="ArrowRight") go(i+1);
+  if(e.key==="ArrowLeft") go(i-1);
+  if(e.key==="Escape") closeLB();
+});
+// 手機滑動
+let sx=null;
+[$("stage"),lb].forEach(el=>{
+  el.addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+  el.addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>45){go(dx<0?i+1:i-1)}sx=null});
+});
+
+// Nav 與淡入
+addEventListener("scroll",()=>$("nav").classList.toggle("scrolled",scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+chooseSet("greece",false);
+</script>
+</body>
+</html>
