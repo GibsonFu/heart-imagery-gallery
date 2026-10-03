@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>心象之間｜蘇東平繪畫展</title>
 <meta name="description" content="心象之間——蘇東平繪畫展。以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
-<link rel="preload" as="image" href="images/greece/g01-m.jpg" fetchpriority="high">
-<link rel="preload" as="font" type="font/woff2" href="fonts/noto-tc-300-0.woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#f4efe6;
@@ -22,8 +20,8 @@
   --accent-2:#b5543a;    /* 屋頂的紅 */
   --frame-1:#d9c7a0;
   --frame-2:#b89c6a;
-  --serif:"Noto Serif TC Sub","Noto Serif TC","Songti TC","PMingLiU",serif;
-  --latin:"Cormorant Garamond","Noto Serif TC Sub",serif;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --latin:"Cormorant Garamond","Noto Serif TC",serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -160,14 +158,8 @@ section{padding:clamp(80px,11vw,140px) 0}
   box-shadow:inset 0 0 0 2px #3c2809, inset 0 0 0 4px #d9b45e, inset 3px 4px 10px rgba(30,18,2,.45), inset 0 0 22px rgba(60,40,10,.12);
 }
 .stage{position:relative;display:flex;align-items:center;justify-content:center;cursor:zoom-in;min-height:120px}
-.stage img{object-fit:contain;background:#f3eee4;transition:opacity .4s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+.stage img{object-fit:contain;transition:opacity .55s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
 .stage img.out{opacity:0;transform:scale(.985)}
-.stage.loading::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(100deg,rgba(235,228,215,0) 30%,rgba(235,228,215,.9) 50%,rgba(235,228,215,0) 70%) #f3eee4;
-  background-size:220% 100%;animation:shimmer 1.3s linear infinite;
-}
-@keyframes shimmer{from{background-position:120% 0}to{background-position:-120% 0}}
 .plaque{ /* 黃銅銘牌 */
   position:absolute;left:50%;bottom:0;transform:translateX(-50%);
   background:linear-gradient(180deg,#f3dc9a,#c9a04a 45%,#a77d2c 55%,#e2c272);
@@ -247,14 +239,6 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
-<style id="tc-fonts">
-@font-face{font-family:'Noto Serif TC Sub';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/noto-tc-300-0.woff2) format('woff2');unicode-range:U+20,U+21,U+22,U+23,U+24,U+25,U+26,U+27,U+28,U+29,U+2A,U+2B,U+2C,U+2D,U+2E,U+2F,U+30,U+31,U+32,U+33,U+34,U+35,U+36,U+37,U+38,U+39,U+3A,U+3B,U+3C,U+3D,U+3E,U+3F,U+40,U+41,U+42,U+43,U+44,U+45,U+46,U+47,U+48,U+49,U+4A,U+4B,U+4C,U+4D,U+4E,U+4F,U+50,U+51,U+52,U+53,U+54,U+55,U+56,U+57,U+58,U+59,U+5A,U+5B,U+5C,U+5D,U+5E,U+5F,U+60,U+61,U+62,U+63,U+64,U+65,U+66,U+67,U+68,U+69,U+6A,U+6B,U+6C,U+6D,U+6E,U+6F,U+70,U+71,U+72,U+73,U+74,U+75,U+76,U+77,U+78,U+79,U+7A,U+7B,U+7C,U+7D,U+7E,U+3000,U+3001,U+3002,U+300C,U+300D,U+30FB,U+4E00,U+4E09,U+4E0A,U+4E0B,U+4E0D,U+4E16,U+4E18,U+4E26,U+4E2D,U+4E4B,U+4E4E,U+4E5D,U+4E5F,U+4E86,U+4E8B,U+4E8C,U+4E92,U+4E99,U+4E9B,U+4E9E,U+4EA4,U+4EAC,U+4EAE,U+4EBA,U+4ECA,U+4ECB,U+4ECD,U+4ED6,U+4EE3,U+4EE5,U+4EF0,U+4EF6,U+4EFD,U+4F0A,U+4F0F,U+4F34,U+4F3C,U+4F46,U+4F4D,U+4F4E,U+4F4F,U+4F54,U+4F5B,U+4F5C,U+4F60,U+4F7F,U+4F86,U+4F8B,U+4F9D,U+4FC3,U+4FDD,U+4FE1,U+4FEF,U+500B,U+5011,U+5012,U+5019,U+501A,U+505A,U+505C,U+5074,U+5076,U+5077,U+508D,U+5091,U+50B3,U+50BE,U+50CF,U+5141,U+5143,U+5148,U+5149,U+514B,U+5165,U+5167,U+5168,U+5169,U+516D,U+5176,U+5178,U+517C,U+518D,U+51AC,U+51B0,U+51DD,U+51E1,U+51FA,U+5206,U+5207,U+5217,U+5225,U+5229,U+5230,U+5236,U+523B,U+524D,U+5269,U+526A,U+5275,U+5283,U+5287,U+528D,U+529B,U+52A0,U+52C7,U+52D5,U+52DE,U+52E2,U+5306,U+5316,U+5317,U+5339,U+5341,U+5343,U+5348,U+534A,U+5351,U+5357,U+5361,U+5373,U+537B,U+5384,U+539F,U+53BB,U+53C8,U+53CA,U+53CD,U+53D6,U+53D7,U+53E3,U+53E4,U+53E5,U+53E6,U+53EA,U+53EF,U+53F2,U+53F3,U+5404,U+540C,U+5410,U+5411,U+5438,U+5442,U+544A,U+547C,U+547D,U+548C,U+54C1,U+54C8,U+54EA,U+552F,U+5584,U+55A7,U+55AE,U+5629,U+56AE,U+56C2,U+56DB,U+56DE,U+56FA,U+570B,U+570D,U+5713,U+5716,U+571F,U+5728,U+5730,U+5750,U+5782,U+57C3,U+57CE,U+57DF,U+5802,U+5805,U+5821,U+5834,U+584A,U+5854,U+586B,U+5885,U+589C,U+58C1,U+58D3,U+58EB,U+590F,U+5915,U+5916,U+591A,U+591C,U+5922,U+5927,U+5929,U+592A,U+592B,U+592E,U+5931,U+594F,U+5954,U+5967,U+5973,U+5979,U+597D,U+5982,U+59C6,U+59CB,U+59FF,U+5B50,U+5B57,U+5B58,U+5B63,U+5B64,U+5B78,U+5B83,U+5B88,U+5B89,U+5B8C,U+5BAE,U+5BB6,U+5BC2,U+5BC6,U+5BDF,U+5BE6,U+5BEB,U+5BEC,U+5BF8,U+5C04,U+5C07,U+5C0D,U+5C0F,U+5C16,U+5C1A,U+5C31,U+5C3A,U+5C3C,U+5C4B,U+5C55,U+5C64,U+5C65,U+5C6C,U+5C71,U+5CA9,U+5CB8,U+5CD9,U+5CF6,U+5CFD,U+5D16,U+5DBC,U+5DE6,U+5DF1,U+5DF2,U+5DF4,U+5DF7,U+5E02,U+5E03,U+5E0C,U+5E36,U+5E38,U+5E45,U+5E55,U+5E73,U+5E74,U+5E79,U+5E7E,U+5E8A,U+5EA6,U+5EA7,U+5ECA,U+5EF6,U+5F04,U+5F0F,U+5F27,U+5F35,U+5F4E,U+5F62,U+5F69,U+5F71,U+5F77,U+5F7F,U+5F80,U+5F85,U+5F88,U+5F8B,U+5F8C,U+5F91,U+5F97,U+5F9E,U+5FAE,U+5FB7,U+5FC3,U+5FC5,U+5FD9,U+5FEB,U+5FF5,U+601D,U+6025,U+6027,U+6063,U+606F,U+6070,U+60C5,U+60F3,U+610F,U+611B,U+611F,U+614B,U+6155,U+6162,U+6163,U+61B6,U+61BE,U+61F8,U+6210,U+6211,U+6216,U+6236,U+6240,U+6247,U+624B,U+624D}
-@font-face{font-family:'Noto Serif TC Sub';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/noto-tc-300-1.woff2) format('woff2');unicode-range:U+6258,U+626D,U+627F,U+628A,U+6295,U+6298,U+62B9,U+62C9,U+62F1,U+62FF,U+6301,U+6307,U+6372,U+638C,U+6392,U+63A2,U+63A5,U+63A7,U+63A9,U+63CF,U+63DB,U+6495,U+64BC,U+64C7,U+64CA,U+6500,U+6524,U+6536,U+6539,U+653E,U+6559,U+6563,U+6574,U+6587,U+659C,U+65AF,U+65B0,U+65B7,U+65B9,U+65BC,U+65C5,U+65CB,U+65E2,U+65E5,U+65E9,U+6602,U+660E,U+660F,U+6613,U+6620,U+6625,U+662F,U+6642,U+665A,U+6668,U+666F,U+6696,U+66AB,U+66AE,U+66E0,U+66F4,U+66FE,U+66FF,U+6700,U+6703,U+6709,U+671B,U+671D,U+672A,U+672C,U+6746,U+6751,U+675F,U+6771,U+677F,U+6790,U+6797,U+679D,U+67B6,U+67CF,U+67D0,U+67D3,U+67D4,U+67F1,U+67F3,U+6839,U+683C,U+6846,U+689D,U+68AF,U+68D5,U+68F5,U+6975,U+6982,U+6A13,U+6A23,U+6A39,U+6A4B,U+6A58,U+6A59,U+6A5F,U+6A6B,U+6A94,U+6B04,U+6B47,U+6B63,U+6B64,U+6B65,U+6B77,U+6BB5,U+6BBC,U+6BCF,U+6BD4,U+6BDB,U+6C23,U+6C34,U+6C42,U+6C89,U+6C92,U+6C99,U+6CB3,U+6CB8,U+6CBF,U+6CC9,U+6CCA,U+6CD5,U+6D1B,U+6D3B,U+6D41,U+6D6A,U+6D6E,U+6D77,U+6DE1,U+6DF1,U+6E05,U+6E2F,U+6E56,U+6E90,U+6E96,U+6EAB,U+6EC5,U+6ED1,U+6EF4,U+6EFE,U+6F02,U+6F14,U+6F2B,U+6F64,U+6F6E,U+6F84,U+6F88,U+6FA4,U+6FC0,U+6FDF,U+6FFE,U+7011,U+7058,U+7063,U+706B,U+7070,U+70AD,U+70BA,U+70C8,U+7121,U+7136,U+7159,U+7167,U+7184,U+71C3,U+71C8,U+722C,U+723E,U+7246,U+7247,U+724C,U+7267,U+7269,U+7279,U+727D,U+72C0,U+7368,U+73BB,U+73FE,U+7403,U+7406,U+7434,U+746A,U+7483,U+74B0,U+74E3,U+751F,U+7526,U+7528,U+7530,U+7531,U+7532,U+754C,U+7559,U+756B,U+7576,U+758A,U+75D5,U+767C,U+767D,U+767E,U+7684,U+76C8,U+76DB,U+76DE,U+76E1,U+76E4,U+76EE,U+76F4,U+76F8,U+770B,U+771F,U+773A,U+773C,U+773E,U+775B,U+7761,U+77B0,U+77E5,U+77ED,U+77F3,U+7814,U+78DA,U+793A,U+7948,U+795D,U+795E,U+798F,U+79B1,U+79D1,U+7A0B,U+7A1C,U+7A2E,U+7A69,U+7A76,U+7A7A,U+7A81,U+7A97,U+7ACB,U+7AD9,U+7AF6,U+7B46,U+7B49,U+7BC0,U+7C21,U+7C73,U+7C89,U+7CBE,U+7D00,U+7D04,U+7D05,U+7D0B,U+7D0D,U+7D14,U+7D19,U+7D2B,U+7D30,U+7D42,U+7D50,U+7D66,U+7D72,U+7D93,U+7DA0,U+7DAD,U+7DCA,U+7DD2,U+7DDA,U+7DE3,U+7DE8,U+7DE9,U+7DEF,U+7E2B,U+7E2E,U+7E37,U+7E3D,U+7E6A,U+7E8C,U+7F3A,U+7F6E,U+7F85,U+7F8A,U+7F8E,U+7FA4,U+7FA9,U+7FBD,U+7FD2,U+8001,U+8005,U+800C,U+8015,U+8056,U+8072,U+8073,U+807D,U+80A9,U+80AF,U+80CC,U+80FD,U+810A,U+8166,U+8173,U+81C2,U+81D8,U+81E8,U+81EA,U+8207,U+820A,U+821F,U+822A,U+822C,U+8239,U+8247,U+8258,U+826F,U+8272,U+82B1,U+82D5,U+82DE,U+8305,U+8349,U+8377,U+83A8,U+83F2,U+840A,U+842C,U+843D,U+8449,U+8457,U+845B,U+8475,U+8513,U+8584,U+85CD,U+85DD,U+85E4,U+8607,U+862D,U+8655,U+865F,U+8759,U+8760,U+878D,U+87A2,U+884C,U+8853,U+8868,U+88AB,U+88C2,U+88E1,U+88FD,U+8907,U+897F,U+8981,U+8986,U+898B,U+8996,U+89BD,U+89C0,U+89D2,U+89E3,U+8A00,U+8A18,U+8A31,U+8A3A,U+8A5E,U+8A66,U+8A71,U+8A9E,U+8AA0,U+8AAA,U+8AB0,U+8ABF,U+8AFE,U+8B19,U+8B49,U+8B77,U+8B80,U+8B93,U+8C37,U+8C61,U+8C8C,U+8C9D,U+8CA0,U+8CAC,U+8D70,U+8D77,U+8D95,U+8DB3,U+8DD1,U+8DDD,U+8DE1,U+8DEF,U+8DF3,U+8EAB,U+8ECA,U+8EDF,U+8F09,U+8F15,U+8F1B,U+8F2A,U+8F49,U+8F5F,U+8FD1,U+8FF4,U+8FFD,U+9000,U+9001,U+9010,U+9014,U+9019,U+901A,U+901F,U+9023,U+9032,U+904B,U+904E}
-@font-face{font-family:'Noto Serif TC Sub';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/noto-tc-300-2.woff2) format('woff2');unicode-range:U+9053,U+905E,U+9060,U+9078,U+907A,U+907C,U+9084,U+908A,U+90A3,U+90CA,U+90E8,U+90F5,U+90FD,U+9192,U+91AB,U+91CC,U+91CD,U+91CE,U+91CF,U+91D1,U+925B,U+9285,U+9298,U+92D2,U+92FC,U+932B,U+9375,U+93AE,U+93E1,U+9418,U+9435,U+9577,U+9580,U+9589,U+958B,U+9592,U+9593,U+95CA,U+95D4,U+95DC,U+963F,U+964C,U+964D,U+9661,U+9663,U+966A,U+9676,U+9678,U+967D,U+9686,U+968A,U+968E,U+9694,U+969B,U+96AA,U+96C5,U+96C6,U+96D5,U+96D9,U+96DC,U+96E2,U+96E8,U+96EA,U+96F2,U+96F7,U+9707,U+9732,U+9752,U+975C,U+9760,U+9762,U+97FF,U+9801,U+9802,U+9810,U+9818,U+982D,U+9839,U+9846,U+984C,U+984F,U+9858,U+985E,U+986F,U+98A8,U+98DB,U+98FE,U+9918,U+9928,U+9996,U+9999,U+99AC,U+99D0,U+9A30,U+9AA8,U+9AD4,U+9AD8,U+9B31,U+9B6F,U+9CF4,U+9EBC,U+9EC3,U+9ED1,U+9ED8,U+9EDE,U+9F4A,U+9F8D,U+FF08,U+FF09,U+FF0C,U+FF0F,U+FF1A,U+FF1B,U+FF1F,U+FF5C}
-@font-face{font-family:'Noto Serif TC Sub';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/noto-tc-400-0.woff2) format('woff2');unicode-range:U+20,U+21,U+22,U+23,U+24,U+25,U+26,U+27,U+28,U+29,U+2A,U+2B,U+2C,U+2D,U+2E,U+2F,U+30,U+31,U+32,U+33,U+34,U+35,U+36,U+37,U+38,U+39,U+3A,U+3B,U+3C,U+3D,U+3E,U+3F,U+40,U+41,U+42,U+43,U+44,U+45,U+46,U+47,U+48,U+49,U+4A,U+4B,U+4C,U+4D,U+4E,U+4F,U+50,U+51,U+52,U+53,U+54,U+55,U+56,U+57,U+58,U+59,U+5A,U+5B,U+5C,U+5D,U+5E,U+5F,U+60,U+61,U+62,U+63,U+64,U+65,U+66,U+67,U+68,U+69,U+6A,U+6B,U+6C,U+6D,U+6E,U+6F,U+70,U+71,U+72,U+73,U+74,U+75,U+76,U+77,U+78,U+79,U+7A,U+7B,U+7C,U+7D,U+7E,U+3000,U+3001,U+3002,U+300C,U+300D,U+30FB,U+4E00,U+4E09,U+4E0A,U+4E0B,U+4E0D,U+4E16,U+4E18,U+4E26,U+4E2D,U+4E4B,U+4E4E,U+4E5D,U+4E5F,U+4E86,U+4E8B,U+4E8C,U+4E92,U+4E99,U+4E9B,U+4E9E,U+4EA4,U+4EAC,U+4EAE,U+4EBA,U+4ECA,U+4ECB,U+4ECD,U+4ED6,U+4EE3,U+4EE5,U+4EF0,U+4EF6,U+4EFD,U+4F0A,U+4F0F,U+4F34,U+4F3C,U+4F46,U+4F4D,U+4F4E,U+4F4F,U+4F54,U+4F5B,U+4F5C,U+4F60,U+4F7F,U+4F86,U+4F8B,U+4F9D,U+4FC3,U+4FDD,U+4FE1,U+4FEF,U+500B,U+5011,U+5012,U+5019,U+501A,U+505A,U+505C,U+5074,U+5076,U+5077,U+508D,U+5091,U+50B3,U+50BE,U+50CF,U+5141,U+5143,U+5148,U+5149,U+514B,U+5165,U+5167,U+5168,U+5169,U+516D,U+5176,U+5178,U+517C,U+518D,U+51AC,U+51B0,U+51DD,U+51E1,U+51FA,U+5206,U+5207,U+5217,U+5225,U+5229,U+5230,U+5236,U+523B,U+524D,U+5269,U+526A,U+5275,U+5283,U+5287,U+528D,U+529B,U+52A0,U+52C7,U+52D5,U+52DE,U+52E2,U+5306,U+5316,U+5317,U+5339,U+5341,U+5343,U+5348,U+534A,U+5351,U+5357,U+5361,U+5373,U+537B,U+5384,U+539F,U+53BB,U+53C8,U+53CA,U+53CD,U+53D6,U+53D7,U+53E3,U+53E4,U+53E5,U+53E6,U+53EA,U+53EF,U+53F2,U+53F3,U+5404,U+540C,U+5410,U+5411,U+5438,U+5442,U+544A,U+547C,U+547D,U+548C,U+54C1,U+54C8,U+54EA,U+552F,U+5584,U+55A7,U+55AE,U+5629,U+56AE,U+56C2,U+56DB,U+56DE,U+56FA,U+570B,U+570D,U+5713,U+5716,U+571F,U+5728,U+5730,U+5750,U+5782,U+57C3,U+57CE,U+57DF,U+5802,U+5805,U+5821,U+5834,U+584A,U+5854,U+586B,U+5885,U+589C,U+58C1,U+58D3,U+58EB,U+590F,U+5915,U+5916,U+591A,U+591C,U+5922,U+5927,U+5929,U+592A,U+592B,U+592E,U+5931,U+594F,U+5954,U+5967,U+5973,U+5979,U+597D,U+5982,U+59C6,U+59CB,U+59FF,U+5B50,U+5B57,U+5B58,U+5B63,U+5B64,U+5B78,U+5B83,U+5B88,U+5B89,U+5B8C,U+5BAE,U+5BB6,U+5BC2,U+5BC6,U+5BDF,U+5BE6,U+5BEB,U+5BEC,U+5BF8,U+5C04,U+5C07,U+5C0D,U+5C0F,U+5C16,U+5C1A,U+5C31,U+5C3A,U+5C3C,U+5C4B,U+5C55,U+5C64,U+5C65,U+5C6C,U+5C71,U+5CA9,U+5CB8,U+5CD9,U+5CF6,U+5CFD,U+5D16,U+5DBC,U+5DE6,U+5DF1,U+5DF2,U+5DF4,U+5DF7,U+5E02,U+5E03,U+5E0C,U+5E36,U+5E38,U+5E45,U+5E55,U+5E73,U+5E74,U+5E79,U+5E7E,U+5E8A,U+5EA6,U+5EA7,U+5ECA,U+5EF6,U+5F04,U+5F0F,U+5F27,U+5F35,U+5F4E,U+5F62,U+5F69,U+5F71,U+5F77,U+5F7F,U+5F80,U+5F85,U+5F88,U+5F8B,U+5F8C,U+5F91,U+5F97,U+5F9E,U+5FAE,U+5FB7,U+5FC3,U+5FC5,U+5FD9,U+5FEB,U+5FF5,U+601D,U+6025,U+6027,U+6063,U+606F,U+6070,U+60C5,U+60F3,U+610F,U+611B,U+611F,U+614B,U+6155,U+6162,U+6163,U+61B6,U+61BE,U+61F8,U+6210,U+6211,U+6216,U+6236,U+6240,U+6247,U+624B,U+624D}
-@font-face{font-family:'Noto Serif TC Sub';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/noto-tc-400-1.woff2) format('woff2');unicode-range:U+6258,U+626D,U+627F,U+628A,U+6295,U+6298,U+62B9,U+62C9,U+62F1,U+62FF,U+6301,U+6307,U+6372,U+638C,U+6392,U+63A2,U+63A5,U+63A7,U+63A9,U+63CF,U+63DB,U+6495,U+64BC,U+64C7,U+64CA,U+6500,U+6524,U+6536,U+6539,U+653E,U+6559,U+6563,U+6574,U+6587,U+659C,U+65AF,U+65B0,U+65B7,U+65B9,U+65BC,U+65C5,U+65CB,U+65E2,U+65E5,U+65E9,U+6602,U+660E,U+660F,U+6613,U+6620,U+6625,U+662F,U+6642,U+665A,U+6668,U+666F,U+6696,U+66AB,U+66AE,U+66E0,U+66F4,U+66FE,U+66FF,U+6700,U+6703,U+6709,U+671B,U+671D,U+672A,U+672C,U+6746,U+6751,U+675F,U+6771,U+677F,U+6790,U+6797,U+679D,U+67B6,U+67CF,U+67D0,U+67D3,U+67D4,U+67F1,U+67F3,U+6839,U+683C,U+6846,U+689D,U+68AF,U+68D5,U+68F5,U+6975,U+6982,U+6A13,U+6A23,U+6A39,U+6A4B,U+6A58,U+6A59,U+6A5F,U+6A6B,U+6A94,U+6B04,U+6B47,U+6B63,U+6B64,U+6B65,U+6B77,U+6BB5,U+6BBC,U+6BCF,U+6BD4,U+6BDB,U+6C23,U+6C34,U+6C42,U+6C89,U+6C92,U+6C99,U+6CB3,U+6CB8,U+6CBF,U+6CC9,U+6CCA,U+6CD5,U+6D1B,U+6D3B,U+6D41,U+6D6A,U+6D6E,U+6D77,U+6DE1,U+6DF1,U+6E05,U+6E2F,U+6E56,U+6E90,U+6E96,U+6EAB,U+6EC5,U+6ED1,U+6EF4,U+6EFE,U+6F02,U+6F14,U+6F2B,U+6F64,U+6F6E,U+6F84,U+6F88,U+6FA4,U+6FC0,U+6FDF,U+6FFE,U+7011,U+7058,U+7063,U+706B,U+7070,U+70AD,U+70BA,U+70C8,U+7121,U+7136,U+7159,U+7167,U+7184,U+71C3,U+71C8,U+722C,U+723E,U+7246,U+7247,U+724C,U+7267,U+7269,U+7279,U+727D,U+72C0,U+7368,U+73BB,U+73FE,U+7403,U+7406,U+7434,U+746A,U+7483,U+74B0,U+74E3,U+751F,U+7526,U+7528,U+7530,U+7531,U+7532,U+754C,U+7559,U+756B,U+7576,U+758A,U+75D5,U+767C,U+767D,U+767E,U+7684,U+76C8,U+76DB,U+76DE,U+76E1,U+76E4,U+76EE,U+76F4,U+76F8,U+770B,U+771F,U+773A,U+773C,U+773E,U+775B,U+7761,U+77B0,U+77E5,U+77ED,U+77F3,U+7814,U+78DA,U+793A,U+7948,U+795D,U+795E,U+798F,U+79B1,U+79D1,U+7A0B,U+7A1C,U+7A2E,U+7A69,U+7A76,U+7A7A,U+7A81,U+7A97,U+7ACB,U+7AD9,U+7AF6,U+7B46,U+7B49,U+7BC0,U+7C21,U+7C73,U+7C89,U+7CBE,U+7D00,U+7D04,U+7D05,U+7D0B,U+7D0D,U+7D14,U+7D19,U+7D2B,U+7D30,U+7D42,U+7D50,U+7D66,U+7D72,U+7D93,U+7DA0,U+7DAD,U+7DCA,U+7DD2,U+7DDA,U+7DE3,U+7DE8,U+7DE9,U+7DEF,U+7E2B,U+7E2E,U+7E37,U+7E3D,U+7E6A,U+7E8C,U+7F3A,U+7F6E,U+7F85,U+7F8A,U+7F8E,U+7FA4,U+7FA9,U+7FBD,U+7FD2,U+8001,U+8005,U+800C,U+8015,U+8056,U+8072,U+8073,U+807D,U+80A9,U+80AF,U+80CC,U+80FD,U+810A,U+8166,U+8173,U+81C2,U+81D8,U+81E8,U+81EA,U+8207,U+820A,U+821F,U+822A,U+822C,U+8239,U+8247,U+8258,U+826F,U+8272,U+82B1,U+82D5,U+82DE,U+8305,U+8349,U+8377,U+83A8,U+83F2,U+840A,U+842C,U+843D,U+8449,U+8457,U+845B,U+8475,U+8513,U+8584,U+85CD,U+85DD,U+85E4,U+8607,U+862D,U+8655,U+865F,U+8759,U+8760,U+878D,U+87A2,U+884C,U+8853,U+8868,U+88AB,U+88C2,U+88E1,U+88FD,U+8907,U+897F,U+8981,U+8986,U+898B,U+8996,U+89BD,U+89C0,U+89D2,U+89E3,U+8A00,U+8A18,U+8A31,U+8A3A,U+8A5E,U+8A66,U+8A71,U+8A9E,U+8AA0,U+8AAA,U+8AB0,U+8ABF,U+8AFE,U+8B19,U+8B49,U+8B77,U+8B80,U+8B93,U+8C37,U+8C61,U+8C8C,U+8C9D,U+8CA0,U+8CAC,U+8D70,U+8D77,U+8D95,U+8DB3,U+8DD1,U+8DDD,U+8DE1,U+8DEF,U+8DF3,U+8EAB,U+8ECA,U+8EDF,U+8F09,U+8F15,U+8F1B,U+8F2A,U+8F49,U+8F5F,U+8FD1,U+8FF4,U+8FFD,U+9000,U+9001,U+9010,U+9014,U+9019,U+901A,U+901F,U+9023,U+9032,U+904B,U+904E}
-@font-face{font-family:'Noto Serif TC Sub';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/noto-tc-400-2.woff2) format('woff2');unicode-range:U+9053,U+905E,U+9060,U+9078,U+907A,U+907C,U+9084,U+908A,U+90A3,U+90CA,U+90E8,U+90F5,U+90FD,U+9192,U+91AB,U+91CC,U+91CD,U+91CE,U+91CF,U+91D1,U+925B,U+9285,U+9298,U+92D2,U+92FC,U+932B,U+9375,U+93AE,U+93E1,U+9418,U+9435,U+9577,U+9580,U+9589,U+958B,U+9592,U+9593,U+95CA,U+95D4,U+95DC,U+963F,U+964C,U+964D,U+9661,U+9663,U+966A,U+9676,U+9678,U+967D,U+9686,U+968A,U+968E,U+9694,U+969B,U+96AA,U+96C5,U+96C6,U+96D5,U+96D9,U+96DC,U+96E2,U+96E8,U+96EA,U+96F2,U+96F7,U+9707,U+9732,U+9752,U+975C,U+9760,U+9762,U+97FF,U+9801,U+9802,U+9810,U+9818,U+982D,U+9839,U+9846,U+984C,U+984F,U+9858,U+985E,U+986F,U+98A8,U+98DB,U+98FE,U+9918,U+9928,U+9996,U+9999,U+99AC,U+99D0,U+9A30,U+9AA8,U+9AD4,U+9AD8,U+9B31,U+9B6F,U+9CF4,U+9EBC,U+9EC3,U+9ED1,U+9ED8,U+9EDE,U+9F4A,U+9F8D,U+FF08,U+FF09,U+FF0C,U+FF0F,U+FF1A,U+FF1B,U+FF1F,U+FF5C}
-</style>
 </head>
 <body>
 
@@ -269,14 +253,14 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 
 <main id="top">
   <section class="hero" style="padding-bottom:0">
-    <img src="images/banner.jpg" srcset="images/banner-m.jpg 900w, images/banner.jpg 1800w" sizes="100vw" width="1800" height="720" fetchpriority="high" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
+    <img src="images/banner.jpg" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
     <a class="scroll" href="#about">SCROLL<i></i></a>
   </section>
 
   <!-- About -->
   <section class="about" id="about">
     <div class="wrap grid">
-      <figure class="reveal"><img src="images/artist.jpg" width="720" height="900" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy" decoding="async" fetchpriority="low"></figure>
+      <figure class="reveal"><img src="images/artist.jpg" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy"></figure>
       <div class="body reveal">
         <span class="eyebrow">About the Artist</span>
         <h2 class="sec-head" style="margin:10px 0 34px;font-weight:400;letter-spacing:.16em;line-height:1.6">醫者看見腦，<br>畫者看見心。</h2>
@@ -386,26 +370,7 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 /* ---------- 雕花金框：以 SVG 浮雕光影生成（光源：左上） ---------- */
 (function buildFrame(){
   const frame=document.getElementById("frame");
-  const svgURL=s=>"data:image/svg+xml,"+encodeURIComponent(s);
-  // 浮雕光影濾鏡很耗效能（尤其手機），所以每個雕飾只在載入時算一次，
-  // 存成點陣圖後再使用；之後畫框改變大小只需縮放圖片，不再重算光影。
-  const unit=()=>(parseFloat(getComputedStyle(frame).paddingLeft)||40)/100*Math.min(window.devicePixelRatio||1,2)*1.15;
-  const jobs=[];
-  function bake(svg,vw,vh,apply){
-    jobs.push(()=>new Promise(done=>{
-      const img=new Image();
-      img.onload=()=>{
-        try{
-          const k=unit(), c=document.createElement("canvas");
-          c.width=Math.max(1,Math.round(vw*k)); c.height=Math.max(1,Math.round(vh*k));
-          c.getContext("2d").drawImage(img,0,0,c.width,c.height);
-          c.toBlob(b=>{apply(b?URL.createObjectURL(b):svgURL(svg));done()},"image/png");
-        }catch(e){apply(svgURL(svg));done()}
-      };
-      img.onerror=()=>{apply(svgURL(svg));done()};
-      img.src=svgURL(svg);
-    }));
-  }
+  const uri=s=>`url("data:image/svg+xml,${encodeURIComponent(s)}")`;
   const f=n=>+n.toFixed(2);
   const GOLD=`<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#e4cc86"/><stop offset=".3" stop-color="#c09d50"/>
@@ -467,8 +432,7 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
   };
   for(const k in SIDES){
     const d=document.createElement("div");d.className="side "+k;
-    const [vb]=SIDES[k], [,,vw,vh]=vb.split(" ").map(Number);
-    bake(sideSVG(...SIDES[k]),vw,vh,u=>{d.style.backgroundImage=`url("${u}")`});
+    d.style.backgroundImage=uri(sideSVG(...SIDES[k]));
     frame.appendChild(d);
   }
 
@@ -527,22 +491,12 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
     + rosette(54,130,27,16) + rosette(54,130,16,10) + `<circle cx="54" cy="130" r="6"/>`;
   const ornSVG=(vb,tf,art)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}"><defs>${GOLD}${EMB(1.9,4.4,1.9)}</defs>
     <g filter="url(#e)"><g transform="${tf}" fill="url(#g)">${art}</g></g></svg>`;
-  const add=(cls,svg,vw,vh)=>{
-    const im=document.createElement("img");im.className="orn "+cls;im.alt="";im.setAttribute("aria-hidden","true");
-    im.style.visibility="hidden";frame.appendChild(im);
-    bake(svg,vw,vh,u=>{im.src=u;im.style.visibility=""});
-  };
-  for(const k in CORNERS) add("c "+k,cornerSVG(CORNERS[k]),180,180);
-  add("mt",ornSVG("0 0 260 100","",shellArt),260,100);
-  add("mb",ornSVG("0 0 260 100","matrix(1 0 0 -1 0 100)",shellArt),260,100);
-  add("ml",ornSVG("0 0 100 260","",sunArt),100,260);
-  add("mr",ornSVG("0 0 100 260","matrix(-1 0 0 1 100 0)",sunArt),100,260);
-  // 依序烘焙，每件之間讓出主執行緒，避免卡住畫面與圖片載入
-  let baked=0, timer;
-  const run=async()=>{baked=unit();for(const j of jobs){await j();await new Promise(r=>setTimeout(r,0))}};
-  run();
-  // 視窗明顯放大時才重新烘焙，維持清晰
-  addEventListener("resize",()=>{clearTimeout(timer);timer=setTimeout(()=>{if(unit()>baked*1.3)run()},400)});
+  const add=(cls,svg)=>{const im=document.createElement("img");im.className="orn "+cls;im.alt="";im.setAttribute("aria-hidden","true");im.src="data:image/svg+xml,"+encodeURIComponent(svg);frame.appendChild(im)};
+  for(const k in CORNERS) add("c "+k,cornerSVG(CORNERS[k]));
+  add("mt",ornSVG("0 0 260 100","",shellArt));
+  add("mb",ornSVG("0 0 260 100","matrix(1 0 0 -1 0 100)",shellArt));
+  add("ml",ornSVG("0 0 100 260","",sunArt));
+  add("mr",ornSVG("0 0 100 260","matrix(-1 0 0 1 100 0)",sunArt));
 })();
 
 const WORKS = {
@@ -599,17 +553,8 @@ const WORKS = {
   ]
 };
 // 圖檔路徑
-// 每幅畫三種尺寸：-t 縮圖（約 8KB）、-m 中圖（手機與一般螢幕）、原圖（高解析度螢幕與全螢幕放大）
-// 直幅作品編號（其餘為橫幅），讓畫框在圖片下載前就能先調好比例
-const PORTRAIT={greece:[4,5,6,11,15,19,20,23,24], iceland:[3,22]};
-const RATIO={greece:1600/1131, iceland:1123/794};
-for(const key of ["greece","iceland"]){
-  WORKS[key].forEach((w,i)=>{
-    const n=key==="greece"?i+1:i+2, base=`images/${key}/${key[0]}${String(n).padStart(2,"0")}`;
-    w.src=`${base}.jpg`; w.mid=`${base}-m.jpg`; w.thumb=`${base}-t.jpg`;
-    const r=RATIO[key]; [w.w,w.h]=PORTRAIT[key].includes(n)?[1,r]:[r,1];
-  });
-}
+WORKS.greece.forEach((w,i)=>w.src=`images/greece/g${String(i+1).padStart(2,"0")}.jpg`);
+WORKS.iceland.forEach((w,i)=>w.src=`images/iceland/i${String(i+2).padStart(2,"0")}.jpg`);
 const SET_LABEL = {greece:"Spring 2026 · 春・希臘", iceland:"Summer 2025 · 夏・冰島"};
 
 const $ = id => document.getElementById(id);
@@ -633,7 +578,7 @@ function buildStrip(){
   WORKS[set].forEach((w,k)=>{
     const b=document.createElement("button");
     b.setAttribute("aria-label",`${pad(k+1)} ${w.t}`);
-    b.innerHTML=`<img src="${w.thumb}" alt="" loading="lazy" decoding="async">`;
+    b.innerHTML=`<img src="${w.src}" alt="" loading="lazy">`;
     b.onclick=()=>go(k);
     strip.appendChild(b);
   });
@@ -651,42 +596,25 @@ function render(){
   [...strip.children].forEach((b,k)=>b.classList.toggle("on",k===i));
   const on=strip.children[i];
   if(on) strip.scrollTo({left:on.offsetLeft-strip.clientWidth/2+on.clientWidth/2,behavior:"smooth"});
-}
-// 依實際顯示寬度與螢幕密度選擇中圖或原圖
-function pick(w){
-  const need=(parseFloat(art.style.width)||600)*(window.devicePixelRatio||1);
-  return need>1100?w.src:w.mid;
-}
-const preloaded=new Set();
-function preload(url){if(preloaded.has(url))return;preloaded.add(url);const im=new Image();im.decoding="async";im.src=url}
-function preloadAround(){
-  const list=WORKS[set];
-  [1,-1,2].forEach(d=>preload(pick(list[(i+d+list.length)%list.length])));
+  // 預載相鄰
+  [list[(i+1)%list.length],list[(i-1+list.length)%list.length]].forEach(n=>{const im=new Image();im.src=n.src});
 }
 function go(k){
   const list=WORKS[set];
   k=(k+list.length)%list.length;
   const token=++busy; i=k;
-  const w=list[i];
-  // 文字立即更新，只做短暫淡入；畫框先依比例調整，不必等圖片下載
-  cap.classList.add("out");
-  art.classList.add("out");
+  art.classList.add("out"); cap.classList.add("out");
   setTimeout(()=>{
     if(token!==busy) return;
-    render(); cap.classList.remove("out");
-    fitArt(w.w,w.h);
-    const url=pick(w);
-    $("stage").classList.add("loading");
-    art.onload=art.onerror=()=>{
+    const next=new Image();
+    next.onload=next.onerror=()=>{
       if(token!==busy) return;
-      $("stage").classList.remove("loading");
-      art.classList.remove("out");
-      preloadAround();
+      fitArt(next.naturalWidth,next.naturalHeight); art.src=list[i].src; render();
+      requestAnimationFrame(()=>{art.classList.remove("out");cap.classList.remove("out")});
+      if(lb.classList.contains("open")) openLB();
     };
-    art.src=url;
-    if(art.complete&&art.naturalWidth) art.onload();
-    if(lb.classList.contains("open")) openLB();
-  },art.getAttribute("src")?220:0);
+    next.src=list[i].src;
+  },380);
 }
 function chooseSet(s,scroll){
   set=s; i=0;
@@ -732,12 +660,6 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
 chooseSet("greece",false);
-// 頁面載入完成後，於閒置時預載另一段旅程的開頭幾幅與縮圖
-addEventListener("load",()=>{
-  const idle=window.requestIdleCallback||(f=>setTimeout(f,1500));
-  idle(()=>{["iceland","greece"].forEach(k=>WORKS[k].slice(0,2).forEach(w=>preload(pick(w))));
-            WORKS.iceland.slice(0,6).forEach(w=>preload(w.thumb))});
-});
 </script>
 </body>
 </html>
