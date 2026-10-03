@@ -123,7 +123,7 @@ section{padding:clamp(80px,11vw,140px) 0}
 .season.active::after{opacity:.4}
 
 .viewer{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:center}
-/* 羅浮宮式雕花金框：線腳與雕飾由 buildFrame() 以 SVG 浮雕生成 */
+/* 羅浮宮式雕花金框：線腳與雕飾為預先繪製的固定圖檔（images/frame/） */
 .viewer .frame-wrap{position:relative;padding:0 0 50px;display:flex;justify-content:center}
 .frame{flex:0 0 auto;transition:width .5s ease}
 .viewer .frame-wrap::before{ /* 美術館投射燈 */
@@ -137,10 +137,10 @@ section{padding:clamp(80px,11vw,140px) 0}
 }
 .viewer .frame-wrap{--F:clamp(16px,3.5vw,46px)}
 .frame .side{position:absolute;pointer-events:none;background-repeat:round;}
-.frame .side.t{top:0;left:0;right:0;height:var(--F);background-size:auto 100%;clip-path:polygon(0 0,100% 0,calc(100% - var(--F)) 100%,var(--F) 100%);filter:brightness(1.07)}
-.frame .side.b{bottom:0;left:0;right:0;height:var(--F);background-size:auto 100%;clip-path:polygon(var(--F) 0,calc(100% - var(--F)) 0,100% 100%,0 100%);filter:brightness(.86)}
-.frame .side.l{top:0;bottom:0;left:0;width:var(--F);background-size:100% auto;clip-path:polygon(0 0,100% var(--F),100% calc(100% - var(--F)),0 100%)}
-.frame .side.r{top:0;bottom:0;right:0;width:var(--F);background-size:100% auto;clip-path:polygon(0 var(--F),100% 0,100% 100%,0 calc(100% - var(--F)));filter:brightness(.9)}
+.frame .side.t{background-image:url(images/frame/side-t.webp);top:0;left:0;right:0;height:var(--F);background-size:auto 100%;clip-path:polygon(0 0,100% 0,calc(100% - var(--F)) 100%,var(--F) 100%);filter:brightness(1.07)}
+.frame .side.b{background-image:url(images/frame/side-b.webp);bottom:0;left:0;right:0;height:var(--F);background-size:auto 100%;clip-path:polygon(var(--F) 0,calc(100% - var(--F)) 0,100% 100%,0 100%);filter:brightness(.86)}
+.frame .side.l{background-image:url(images/frame/side-l.webp);top:0;bottom:0;left:0;width:var(--F);background-size:100% auto;clip-path:polygon(0 0,100% var(--F),100% calc(100% - var(--F)),0 100%)}
+.frame .side.r{background-image:url(images/frame/side-r.webp);top:0;bottom:0;right:0;width:var(--F);background-size:100% auto;clip-path:polygon(0 var(--F),100% 0,100% 100%,0 calc(100% - var(--F)));filter:brightness(.9)}
 .frame .orn{position:absolute;pointer-events:none;z-index:2;user-select:none}
 .frame .orn.c{width:calc(var(--F) * 1.8);height:calc(var(--F) * 1.8)}
 .frame .orn.ctl{left:0;top:0}
@@ -253,14 +253,14 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 
 <main id="top">
   <section class="hero" style="padding-bottom:0">
-    <img src="images/banner.jpg" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
+    <img src="images/banner.webp" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
     <a class="scroll" href="#about">SCROLL<i></i></a>
   </section>
 
   <!-- About -->
   <section class="about" id="about">
     <div class="wrap grid">
-      <figure class="reveal"><img src="images/artist.jpg" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy"></figure>
+      <figure class="reveal"><img src="images/artist.webp" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy"></figure>
       <div class="body reveal">
         <span class="eyebrow">About the Artist</span>
         <h2 class="sec-head" style="margin:10px 0 34px;font-weight:400;letter-spacing:.16em;line-height:1.6">醫者看見腦，<br>畫者看見心。</h2>
@@ -304,12 +304,12 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 
       <div class="seasons reveal" role="tablist">
         <button class="season" data-set="greece" role="tab">
-          <img src="images/cover-greece.jpg" alt="Allura 郵輪航線：羅馬、阿瑪菲、卡塔尼亞、卡塔科隆、聖托里尼、米洛斯、米克諾斯、雅典" loading="lazy">
+          <img src="images/cover-greece.webp" alt="Allura 郵輪航線：羅馬、阿瑪菲、卡塔尼亞、卡塔科隆、聖托里尼、米洛斯、米克諾斯、雅典" loading="lazy">
           <span class="label"><span class="eyebrow">Spring · 2026</span><strong>春・希臘</strong><small>從羅馬出航，一路漂向愛琴海</small></span>
           <span class="count">24 works</span>
         </button>
         <button class="season" data-set="iceland" role="tab">
-          <img src="images/cover-iceland.jpg" alt="冰島環島路線地圖" loading="lazy">
+          <img src="images/cover-iceland.webp" alt="冰島環島路線地圖" loading="lazy">
           <span class="label"><span class="eyebrow">Summer · 2025</span><strong>夏・冰島</strong><small>環島北國，兼收旅途中的其他記憶</small></span>
           <span class="count">23 works</span>
         </button>
@@ -318,6 +318,11 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
       <div class="viewer reveal">
         <div class="frame-wrap">
           <div class="frame" id="frame">
+            <div class="side t"></div><div class="side b"></div><div class="side l"></div><div class="side r"></div>
+            <img class="orn c ctl" src="images/frame/ctl.webp" alt="" aria-hidden="true"><img class="orn c ctr" src="images/frame/ctr.webp" alt="" aria-hidden="true">
+            <img class="orn c cbl" src="images/frame/cbl.webp" alt="" aria-hidden="true"><img class="orn c cbr" src="images/frame/cbr.webp" alt="" aria-hidden="true">
+            <img class="orn mt" src="images/frame/mt.webp" alt="" aria-hidden="true"><img class="orn mb" src="images/frame/mb.webp" alt="" aria-hidden="true">
+            <img class="orn ml" src="images/frame/ml.webp" alt="" aria-hidden="true"><img class="orn mr" src="images/frame/mr.webp" alt="" aria-hidden="true">
             <div class="mat">
               <div class="stage" id="stage" title="點擊放大觀看">
                 <img id="art" src="" alt="">
@@ -367,138 +372,6 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 </div>
 
 <script>
-/* ---------- 雕花金框：以 SVG 浮雕光影生成（光源：左上） ---------- */
-(function buildFrame(){
-  const frame=document.getElementById("frame");
-  const uri=s=>`url("data:image/svg+xml,${encodeURIComponent(s)}")`;
-  const f=n=>+n.toFixed(2);
-  const GOLD=`<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#e4cc86"/><stop offset=".3" stop-color="#c09d50"/>
-    <stop offset=".6" stop-color="#8d6b28"/><stop offset=".8" stop-color="#b38f45"/>
-    <stop offset="1" stop-color="#5a4114"/></linearGradient>`;
-  // 浮雕濾鏡：漫射 × 金色 + 鏡面高光 + 投影
-  const EMB=(b,s,o)=>`<filter id="e" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-    <feGaussianBlur in="SourceAlpha" stdDeviation="${b}" result="bl"/>
-    <feDiffuseLighting in="bl" surfaceScale="${s}" diffuseConstant="1.45" lighting-color="#fff" result="di"><feDistantLight azimuth="225" elevation="40"/></feDiffuseLighting>
-    <feComposite in="SourceGraphic" in2="di" operator="arithmetic" k1="1" result="li"/>
-    <feSpecularLighting in="bl" surfaceScale="${s}" specularConstant=".6" specularExponent="14" lighting-color="#fbe7b0" result="sp"><feDistantLight azimuth="225" elevation="46"/></feSpecularLighting>
-    <feComposite in="sp" in2="SourceAlpha" operator="in" result="sp2"/>
-    <feComposite in="li" in2="sp2" operator="arithmetic" k2="1" k3=".55" result="to"/>
-    <feComposite in="to" in2="SourceAlpha" operator="in" result="to2"/>
-    <feGaussianBlur in="SourceAlpha" stdDeviation="${b*1.4}" result="sb"/>
-    <feOffset in="sb" dx="${o}" dy="${o}" result="so"/>
-    <feFlood flood-color="#241503" flood-opacity=".65"/><feComposite in2="so" operator="in" result="sh"/>
-    <feMerge><feMergeNode in="sh"/><feMergeNode in="to2"/></feMerge></filter>`;
-
-  /* 線腳斷面（上邊方向：外緣 y=0 → 內緣 y=100；重複單位 P=40）
-     外緣：扭轉葉飾滾邊 ／ 中段：平面古金飾帶 ／ 內緣：細扭葉 + 金邊 */
-  const P=40;
-  const BG=`<linearGradient id="tor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2708"/><stop offset=".4" stop-color="#7a5a20"/><stop offset="1" stop-color="#2e1f06"/></linearGradient>
-    <linearGradient id="fri" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfb065"/><stop offset=".45" stop-color="#b7944a"/><stop offset="1" stop-color="#977535"/></linearGradient>
-    <filter id="n" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .2  0 0 0 0 .13  0 0 0 0 .03  0 0 0 1.2 -.35"/></filter>`;
-  const W=P+100;
-  const bgLayer=`<rect x="-50" y="0" width="${W}" height="100" fill="#3a2708"/>
-    <rect x="-50" y="2" width="${W}" height="24" fill="url(#tor)"/>
-    <rect x="-50" y="29" width="${W}" height="51" fill="url(#fri)"/>
-    <rect x="-50" y="29" width="${W}" height="51" filter="url(#n)" opacity=".35"/>
-    <rect x="-50" y="83" width="${W}" height="12" fill="#3a2708"/>`;
-  function carve(x0){
-    let s="";
-    for(let k=0;k<3;k++){ // 外緣扭葉：斜向重疊的葉片
-      const x=x0+k*P/3;
-      s+=`<path d="M${f(x)},3 C${f(x+12)},1.5 ${f(x+21)},13 ${f(x+16)},25 C${f(x+5)},23 ${f(x-3)},13 ${f(x)},3Z"/>`;
-    }
-    for(let k=0;k<4;k++){ // 內緣細扭葉（反向）
-      const x=x0+k*P/4;
-      s+=`<path d="M${f(x+9)},83.5 C${f(x+2)},84 ${f(x-3)},90 ${f(x)},94.5 C${f(x+6)},94 ${f(x+11)},89 ${f(x+9)},83.5Z"/>`;
-    }
-    return s;
-  }
-  let carved=`<rect x="-50" y="0" width="${W}" height="2.2"/><rect x="-50" y="26" width="${W}" height="3"/>
-    <rect x="-50" y="80" width="${W}" height="3"/><rect x="-50" y="95" width="${W}" height="5"/>`;
-  const ribs=[];
-  for(let x=-P;x<=2*P;x+=P){
-    carved+=carve(x);
-    for(let k=0;k<3;k++){const q=x+k*P/3;ribs.push(`M${f(q+3)},6 Q${f(q+12)},10 ${f(q+14)},21`)}
-  }
-  const sideSVG=(vb,tf)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}" width="${vb.split(" ")[2]}" height="${vb.split(" ")[3]}"><defs>${GOLD}${BG}${EMB(.8,2.4,.8)}</defs>
-    <g transform="${tf}">${bgLayer}</g>
-    <g filter="url(#e)"><g transform="${tf}" fill="url(#g)">${carved}<path d="${ribs.join(" ")}" stroke="#6b4c15" stroke-width="1" fill="none"/></g></g></svg>`;
-  const SIDES={
-    t:["0 0 40 100",""],
-    b:["0 0 40 100","matrix(1 0 0 -1 0 100)"],
-    l:["0 0 100 40","matrix(0 1 1 0 0 0)"],
-    r:["0 0 100 40","matrix(0 1 -1 0 100 0)"]
-  };
-  for(const k in SIDES){
-    const d=document.createElement("div");d.className="side "+k;
-    d.style.backgroundImage=uri(sideSVG(...SIDES[k]));
-    frame.appendChild(d);
-  }
-
-  /* 雕飾元件 */
-  function shell(ox,oy,a0,a1,n,L,w){
-    let s="";
-    for(let k=0;k<n;k++){
-      const a=(a0+(a1-a0)*k/(n-1))*Math.PI/180, l=L*(k%2?0.86:1);
-      const dx=Math.cos(a),dy=Math.sin(a),nx=-dy,ny=dx;
-      const p=(t,m)=>`${f(ox+dx*l*t+nx*w*m)},${f(oy+dy*l*t+ny*w*m)}`;
-      s+=`<path d="M${ox},${oy} C${p(.3,.9)} ${p(.82,1.05)} ${p(1,0)} C${p(.82,-1.05)} ${p(.3,-.9)} ${ox},${oy}Z"/>`;
-    }
-    return s;
-  }
-  function leaf(ax,ay,cx,cy,bx,by,w,n){ // 圓潤分瓣的莨苕葉，葉尖微捲
-    const N=n*2, Lp=[],Rp=[];
-    for(let i=0;i<=N;i++){
-      const t=i/N, u=1-t;
-      const x=u*u*ax+2*u*t*cx+t*t*bx, y=u*u*ay+2*u*t*cy+t*t*by;
-      let tx=2*u*(cx-ax)+2*t*(bx-cx), ty=2*u*(cy-ay)+2*t*(by-cy); const m=Math.hypot(tx,ty)||1; tx/=m;ty/=m;
-      let wd=w*Math.sin(Math.PI*Math.pow(t,.62)); if(i%2) wd*=.62; else if(i>0&&i<N) wd*=1.18;
-      Lp.push([x-ty*wd,y+tx*wd]); Rp.push([x+ty*wd,y-tx*wd]);
-    }
-    const pt=q=>`${f(q[0])},${f(q[1])}`;
-    let d=`M${pt(Lp[0])}`;
-    for(let i=1;i<=N;i+=2) d+=` Q${pt(Lp[i])} ${pt(Lp[Math.min(i+1,N)])}`;
-    for(let i=N-1;i>=0;i-=2) d+=` Q${pt(Rp[i])} ${pt(Rp[Math.max(i-1,0)])}`;
-    return `<path d="${d}Z"/><circle cx="${bx}" cy="${by}" r="${f(w*.32)}"/>`
-      + `<path d="M${ax},${ay} Q${cx},${cy} ${bx},${by}" stroke="#5e4313" stroke-width="${f(Math.max(1,w*.12))}" fill="none"/>`;
-  }
-  const scroll=(d,w)=>`<path d="${d}" fill="none" stroke="url(#g)" stroke-width="${w}" stroke-linecap="round"/>`;
-  function rosette(cx,cy,r,n=10){
-    let s=`<circle cx="${cx}" cy="${cy}" r="${f(r*.38)}"/>`;
-    for(let k=0;k<n;k++){const a=k*2*Math.PI/n,px=f(cx+Math.cos(a)*r*.7),py=f(cy+Math.sin(a)*r*.7);
-      s+=`<ellipse cx="${px}" cy="${py}" rx="${f(r*.34)}" ry="${f(r*.16)}" transform="rotate(${f(k*360/n)} ${px} ${py})"/>`}
-    return s;
-  }
-  function tulip(x,y,ang,sz){ // 鬱金香花苞
-    return `<g transform="translate(${x} ${y}) rotate(${ang}) scale(${sz})"><path d="M0,0 C-7,-2 -9,-12 -5,-20 L-2,-14 L0,-22 L2,-14 L5,-20 C9,-12 7,-2 0,0Z"/><path d="M0,0 L0,8" stroke="url(#g)" stroke-width="2.4"/></g>`;
-  }
-  // 角飾：位於平面飾帶內（框寬 100，飾帶 29–80）
-  const arm=leaf(70,56,110,34,160,50,13,6) + leaf(78,70,114,82,148,70,8.5,4) + tulip(150,56,95,1.4);
-  const cornerArt=`<g>${arm}</g><g transform="matrix(0 1 1 0 0 0)">${arm}</g>`
-    + leaf(78,78,62,46,38,36,11,3) + leaf(78,78,46,62,36,38,11,3) + leaf(80,80,60,60,36,36,14,3)
-    + rosette(60,60,15,9) + `<circle cx="60" cy="60" r="5.5"/>` + tulip(80,80,135,1.2);
-  const cornerSVG=tf=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"><defs>${GOLD}${EMB(2,4.6,2)}</defs>
-    <g filter="url(#e)"><g transform="${tf}" fill="url(#g)">${cornerArt}</g></g></svg>`;
-  const CORNERS={ctl:"",ctr:"matrix(-1 0 0 1 180 0)",cbl:"matrix(1 0 0 -1 0 180)",cbr:"matrix(-1 0 0 -1 180 180)"};
-  // 上下中央：貝殼與捲葉
-  const shellHalf=leaf(146,62,186,36,238,52,13,6) + leaf(148,72,182,84,216,72,8,4);
-  const shellArt=`<g>${shellHalf}</g><g transform="matrix(-1 0 0 1 260 0)">${shellHalf}</g>`
-    + shell(130,74,203,337,13,44,5.6) + `<ellipse cx="130" cy="74" rx="13" ry="8"/>`;
-  // 左右中央：向日葵花飾與上下垂葉
-  const sunHalf=leaf(54,104,30,72,52,30,13,6) + leaf(56,106,78,80,66,52,8,4) + tulip(52,30,0,1.35);
-  const sunArt=`<g>${sunHalf}</g><g transform="matrix(1 0 0 -1 0 260)">${sunHalf}</g>`
-    + rosette(54,130,27,16) + rosette(54,130,16,10) + `<circle cx="54" cy="130" r="6"/>`;
-  const ornSVG=(vb,tf,art)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}"><defs>${GOLD}${EMB(1.9,4.4,1.9)}</defs>
-    <g filter="url(#e)"><g transform="${tf}" fill="url(#g)">${art}</g></g></svg>`;
-  const add=(cls,svg)=>{const im=document.createElement("img");im.className="orn "+cls;im.alt="";im.setAttribute("aria-hidden","true");im.src="data:image/svg+xml,"+encodeURIComponent(svg);frame.appendChild(im)};
-  for(const k in CORNERS) add("c "+k,cornerSVG(CORNERS[k]));
-  add("mt",ornSVG("0 0 260 100","",shellArt));
-  add("mb",ornSVG("0 0 260 100","matrix(1 0 0 -1 0 100)",shellArt));
-  add("ml",ornSVG("0 0 100 260","",sunArt));
-  add("mr",ornSVG("0 0 100 260","matrix(-1 0 0 1 100 0)",sunArt));
-})();
-
 const WORKS = {
   greece: [
     {t:"雲層之下", p:"德國 · 慕尼黑上空", d:"2026.04.27", m:"飛機還沒降落，大地先攤成一張地圖。綠是田，藍是河，旅人還懸在半空，心卻已先一步著陸——旅程，總是從俯瞰開始。"},
@@ -553,8 +426,9 @@ const WORKS = {
   ]
 };
 // 圖檔路徑
-WORKS.greece.forEach((w,i)=>w.src=`images/greece/g${String(i+1).padStart(2,"0")}.jpg`);
-WORKS.iceland.forEach((w,i)=>w.src=`images/iceland/i${String(i+2).padStart(2,"0")}.jpg`);
+// 作品圖（WebP，解析度與原 JPG 相同）與縮圖列專用小圖
+WORKS.greece.forEach((w,i)=>{const b=`images/greece/g${String(i+1).padStart(2,"0")}`;w.src=`${b}.webp`;w.thumb=`${b}-t.webp`});
+WORKS.iceland.forEach((w,i)=>{const b=`images/iceland/i${String(i+2).padStart(2,"0")}`;w.src=`${b}.webp`;w.thumb=`${b}-t.webp`});
 const SET_LABEL = {greece:"Spring 2026 · 春・希臘", iceland:"Summer 2025 · 夏・冰島"};
 
 const $ = id => document.getElementById(id);
@@ -578,7 +452,7 @@ function buildStrip(){
   WORKS[set].forEach((w,k)=>{
     const b=document.createElement("button");
     b.setAttribute("aria-label",`${pad(k+1)} ${w.t}`);
-    b.innerHTML=`<img src="${w.src}" alt="" loading="lazy">`;
+    b.innerHTML=`<img src="${w.thumb}" alt="" loading="lazy">`;
     b.onclick=()=>go(k);
     strip.appendChild(b);
   });
