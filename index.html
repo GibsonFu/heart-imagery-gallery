@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>心象之間｜蘇東平繪畫展</title>
 <meta name="description" content="心象之間——蘇東平繪畫展。以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
-<link rel="preload" as="image" href="images/greece/g01-m.jpg">
+<link rel="preload" as="image" href="images/greece/g01-m.jpg" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="fonts/noto-tc-300-0.woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -269,14 +269,14 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 
 <main id="top">
   <section class="hero" style="padding-bottom:0">
-    <img src="images/banner.jpg" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
+    <img src="images/banner.jpg" srcset="images/banner-m.jpg 900w, images/banner.jpg 1800w" sizes="100vw" width="1800" height="720" fetchpriority="high" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
     <a class="scroll" href="#about">SCROLL<i></i></a>
   </section>
 
   <!-- About -->
   <section class="about" id="about">
     <div class="wrap grid">
-      <figure class="reveal"><img src="images/artist.jpg" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy"></figure>
+      <figure class="reveal"><img src="images/artist.jpg" width="720" height="900" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy" decoding="async" fetchpriority="low"></figure>
       <div class="body reveal">
         <span class="eyebrow">About the Artist</span>
         <h2 class="sec-head" style="margin:10px 0 34px;font-weight:400;letter-spacing:.16em;line-height:1.6">醫者看見腦，<br>畫者看見心。</h2>
