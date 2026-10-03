@@ -158,8 +158,14 @@ section{padding:clamp(80px,11vw,140px) 0}
   box-shadow:inset 0 0 0 2px #3c2809, inset 0 0 0 4px #d9b45e, inset 3px 4px 10px rgba(30,18,2,.45), inset 0 0 22px rgba(60,40,10,.12);
 }
 .stage{position:relative;display:flex;align-items:center;justify-content:center;cursor:zoom-in;min-height:120px}
-.stage img{object-fit:contain;transition:opacity .55s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+.stage img{object-fit:contain;background:#f3eee4;transition:opacity .4s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
 .stage img.out{opacity:0;transform:scale(.985)}
+.stage.loading::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(100deg,rgba(235,228,215,0) 30%,rgba(235,228,215,.9) 50%,rgba(235,228,215,0) 70%) #f3eee4;
+  background-size:220% 100%;animation:shimmer 1.3s linear infinite;
+}
+@keyframes shimmer{from{background-position:120% 0}to{background-position:-120% 0}}
 .plaque{ /* 黃銅銘牌 */
   position:absolute;left:50%;bottom:0;transform:translateX(-50%);
   background:linear-gradient(180deg,#f3dc9a,#c9a04a 45%,#a77d2c 55%,#e2c272);
@@ -553,8 +559,17 @@ const WORKS = {
   ]
 };
 // 圖檔路徑
-WORKS.greece.forEach((w,i)=>w.src=`images/greece/g${String(i+1).padStart(2,"0")}.jpg`);
-WORKS.iceland.forEach((w,i)=>w.src=`images/iceland/i${String(i+2).padStart(2,"0")}.jpg`);
+// 每幅畫三種尺寸：-t 縮圖（約 8KB）、-m 中圖（手機與一般螢幕）、原圖（高解析度螢幕與全螢幕放大）
+// 直幅作品編號（其餘為橫幅），讓畫框在圖片下載前就能先調好比例
+const PORTRAIT={greece:[4,5,6,11,15,19,20,23,24], iceland:[3,22]};
+const RATIO={greece:1600/1131, iceland:1123/794};
+for(const key of ["greece","iceland"]){
+  WORKS[key].forEach((w,i)=>{
+    const n=key==="greece"?i+1:i+2, base=`images/${key}/${key[0]}${String(n).padStart(2,"0")}`;
+    w.src=`${base}.jpg`; w.mid=`${base}-m.jpg`; w.thumb=`${base}-t.jpg`;
+    const r=RATIO[key]; [w.w,w.h]=PORTRAIT[key].includes(n)?[1,r]:[r,1];
+  });
+}
 const SET_LABEL = {greece:"Spring 2026 · 春・希臘", iceland:"Summer 2025 · 夏・冰島"};
 
 const $ = id => document.getElementById(id);
@@ -578,7 +593,7 @@ function buildStrip(){
   WORKS[set].forEach((w,k)=>{
     const b=document.createElement("button");
     b.setAttribute("aria-label",`${pad(k+1)} ${w.t}`);
-    b.innerHTML=`<img src="${w.src}" alt="" loading="lazy">`;
+    b.innerHTML=`<img src="${w.thumb}" alt="" loading="lazy" decoding="async">`;
     b.onclick=()=>go(k);
     strip.appendChild(b);
   });
@@ -596,25 +611,42 @@ function render(){
   [...strip.children].forEach((b,k)=>b.classList.toggle("on",k===i));
   const on=strip.children[i];
   if(on) strip.scrollTo({left:on.offsetLeft-strip.clientWidth/2+on.clientWidth/2,behavior:"smooth"});
-  // 預載相鄰
-  [list[(i+1)%list.length],list[(i-1+list.length)%list.length]].forEach(n=>{const im=new Image();im.src=n.src});
+}
+// 依實際顯示寬度與螢幕密度選擇中圖或原圖
+function pick(w){
+  const need=(parseFloat(art.style.width)||600)*(window.devicePixelRatio||1);
+  return need>1100?w.src:w.mid;
+}
+const preloaded=new Set();
+function preload(url){if(preloaded.has(url))return;preloaded.add(url);const im=new Image();im.decoding="async";im.src=url}
+function preloadAround(){
+  const list=WORKS[set];
+  [1,-1,2].forEach(d=>preload(pick(list[(i+d+list.length)%list.length])));
 }
 function go(k){
   const list=WORKS[set];
   k=(k+list.length)%list.length;
   const token=++busy; i=k;
-  art.classList.add("out"); cap.classList.add("out");
+  const w=list[i];
+  // 文字立即更新，只做短暫淡入；畫框先依比例調整，不必等圖片下載
+  cap.classList.add("out");
+  art.classList.add("out");
   setTimeout(()=>{
     if(token!==busy) return;
-    const next=new Image();
-    next.onload=next.onerror=()=>{
+    render(); cap.classList.remove("out");
+    fitArt(w.w,w.h);
+    const url=pick(w);
+    $("stage").classList.add("loading");
+    art.onload=art.onerror=()=>{
       if(token!==busy) return;
-      fitArt(next.naturalWidth,next.naturalHeight); art.src=list[i].src; render();
-      requestAnimationFrame(()=>{art.classList.remove("out");cap.classList.remove("out")});
-      if(lb.classList.contains("open")) openLB();
+      $("stage").classList.remove("loading");
+      art.classList.remove("out");
+      preloadAround();
     };
-    next.src=list[i].src;
-  },380);
+    art.src=url;
+    if(art.complete&&art.naturalWidth) art.onload();
+    if(lb.classList.contains("open")) openLB();
+  },220);
 }
 function chooseSet(s,scroll){
   set=s; i=0;
@@ -660,6 +692,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
 chooseSet("greece",false);
+// 頁面載入完成後，於閒置時預載另一段旅程的開頭幾幅與縮圖
+addEventListener("load",()=>{
+  const idle=window.requestIdleCallback||(f=>setTimeout(f,1500));
+  idle(()=>{["iceland","greece"].forEach(k=>WORKS[k].slice(0,2).forEach(w=>preload(pick(w))));
+            WORKS.iceland.slice(0,6).forEach(w=>preload(w.thumb))});
+});
 </script>
 </body>
 </html>
