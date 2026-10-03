@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>心象之間｜蘇東平繪畫展</title>
 <meta name="description" content="心象之間——蘇東平繪畫展。以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
+<script>
+// 圖片經 jsDelivr 加速（GitHub Pages 連台灣較慢）；網址固定在某個版本，可長期快取。
+// 更換或新增圖片並推送後，需把下方與 HTML/CSS 中的版本號換成新的 commit。
+var IMG_BASE="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/";
+// 若加速服務暫時無法連線，自動改回從本站讀取
+document.addEventListener("error",e=>{const t=e.target;if(t.tagName==="IMG"&&t.src.startsWith(IMG_BASE)){t.src=t.src.slice(IMG_BASE.length)}},true);
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -137,10 +145,10 @@ section{padding:clamp(80px,11vw,140px) 0}
 }
 .viewer .frame-wrap{--F:clamp(16px,3.5vw,46px)}
 .frame .side{position:absolute;pointer-events:none;background-repeat:round;}
-.frame .side.t{background-image:url(images/frame/side-t.webp);top:0;left:0;right:0;height:var(--F);background-size:auto 100%;clip-path:polygon(0 0,100% 0,calc(100% - var(--F)) 100%,var(--F) 100%);filter:brightness(1.07)}
-.frame .side.b{background-image:url(images/frame/side-b.webp);bottom:0;left:0;right:0;height:var(--F);background-size:auto 100%;clip-path:polygon(var(--F) 0,calc(100% - var(--F)) 0,100% 100%,0 100%);filter:brightness(.86)}
-.frame .side.l{background-image:url(images/frame/side-l.webp);top:0;bottom:0;left:0;width:var(--F);background-size:100% auto;clip-path:polygon(0 0,100% var(--F),100% calc(100% - var(--F)),0 100%)}
-.frame .side.r{background-image:url(images/frame/side-r.webp);top:0;bottom:0;right:0;width:var(--F);background-size:100% auto;clip-path:polygon(0 var(--F),100% 0,100% 100%,0 calc(100% - var(--F)));filter:brightness(.9)}
+.frame .side.t{background-image:url(https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/side-t.webp);top:0;left:0;right:0;height:var(--F);background-size:auto 100%;clip-path:polygon(0 0,100% 0,calc(100% - var(--F)) 100%,var(--F) 100%);filter:brightness(1.07)}
+.frame .side.b{background-image:url(https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/side-b.webp);bottom:0;left:0;right:0;height:var(--F);background-size:auto 100%;clip-path:polygon(var(--F) 0,calc(100% - var(--F)) 0,100% 100%,0 100%);filter:brightness(.86)}
+.frame .side.l{background-image:url(https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/side-l.webp);top:0;bottom:0;left:0;width:var(--F);background-size:100% auto;clip-path:polygon(0 0,100% var(--F),100% calc(100% - var(--F)),0 100%)}
+.frame .side.r{background-image:url(https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/side-r.webp);top:0;bottom:0;right:0;width:var(--F);background-size:100% auto;clip-path:polygon(0 var(--F),100% 0,100% 100%,0 calc(100% - var(--F)));filter:brightness(.9)}
 .frame .orn{position:absolute;pointer-events:none;z-index:2;user-select:none}
 .frame .orn.c{width:calc(var(--F) * 1.8);height:calc(var(--F) * 1.8)}
 .frame .orn.ctl{left:0;top:0}
@@ -253,14 +261,14 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 
 <main id="top">
   <section class="hero" style="padding-bottom:0">
-    <img src="images/banner.webp" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
+    <img src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/banner.webp" alt="心象之間 蘇東平繪畫展——以醫者之心，凝視生命；以畫者之筆，描繪世界的善良與溫柔。">
     <a class="scroll" href="#about">SCROLL<i></i></a>
   </section>
 
   <!-- About -->
   <section class="about" id="about">
     <div class="wrap grid">
-      <figure class="reveal"><img src="images/artist.webp" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy"></figure>
+      <figure class="reveal"><img src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/artist.webp" alt="作者簡介：蘇東平，精神醫學 × 影像醫學 × 繪畫創作" loading="lazy"></figure>
       <div class="body reveal">
         <span class="eyebrow">About the Artist</span>
         <h2 class="sec-head" style="margin:10px 0 34px;font-weight:400;letter-spacing:.16em;line-height:1.6">醫者看見腦，<br>畫者看見心。</h2>
@@ -304,12 +312,12 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
 
       <div class="seasons reveal" role="tablist">
         <button class="season" data-set="greece" role="tab">
-          <img src="images/cover-greece.webp" alt="Allura 郵輪航線：羅馬、阿瑪菲、卡塔尼亞、卡塔科隆、聖托里尼、米洛斯、米克諾斯、雅典" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/cover-greece.webp" alt="Allura 郵輪航線：羅馬、阿瑪菲、卡塔尼亞、卡塔科隆、聖托里尼、米洛斯、米克諾斯、雅典" loading="lazy">
           <span class="label"><span class="eyebrow">Spring · 2026</span><strong>春・希臘</strong><small>從羅馬出航，一路漂向愛琴海</small></span>
           <span class="count">24 works</span>
         </button>
         <button class="season" data-set="iceland" role="tab">
-          <img src="images/cover-iceland.webp" alt="冰島環島路線地圖" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/cover-iceland.webp" alt="冰島環島路線地圖" loading="lazy">
           <span class="label"><span class="eyebrow">Summer · 2025</span><strong>夏・冰島</strong><small>環島北國，兼收旅途中的其他記憶</small></span>
           <span class="count">23 works</span>
         </button>
@@ -319,10 +327,10 @@ footer{border-top:1px solid var(--line);padding:30px 16px;text-align:center;font
         <div class="frame-wrap">
           <div class="frame" id="frame">
             <div class="side t"></div><div class="side b"></div><div class="side l"></div><div class="side r"></div>
-            <img class="orn c ctl" src="images/frame/ctl.webp" alt="" aria-hidden="true"><img class="orn c ctr" src="images/frame/ctr.webp" alt="" aria-hidden="true">
-            <img class="orn c cbl" src="images/frame/cbl.webp" alt="" aria-hidden="true"><img class="orn c cbr" src="images/frame/cbr.webp" alt="" aria-hidden="true">
-            <img class="orn mt" src="images/frame/mt.webp" alt="" aria-hidden="true"><img class="orn mb" src="images/frame/mb.webp" alt="" aria-hidden="true">
-            <img class="orn ml" src="images/frame/ml.webp" alt="" aria-hidden="true"><img class="orn mr" src="images/frame/mr.webp" alt="" aria-hidden="true">
+            <img class="orn c ctl" src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/ctl.webp" alt="" aria-hidden="true"><img class="orn c ctr" src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/ctr.webp" alt="" aria-hidden="true">
+            <img class="orn c cbl" src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/cbl.webp" alt="" aria-hidden="true"><img class="orn c cbr" src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/cbr.webp" alt="" aria-hidden="true">
+            <img class="orn mt" src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/mt.webp" alt="" aria-hidden="true"><img class="orn mb" src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/mb.webp" alt="" aria-hidden="true">
+            <img class="orn ml" src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/ml.webp" alt="" aria-hidden="true"><img class="orn mr" src="https://cdn.jsdelivr.net/gh/GibsonFu/heart-imagery-gallery@8f13f5f38a1cd78e3bcb270564be885db2b9cc9c/images/frame/mr.webp" alt="" aria-hidden="true">
             <div class="mat">
               <div class="stage" id="stage" title="點擊放大觀看">
                 <img id="art" src="" alt="">
@@ -427,8 +435,8 @@ const WORKS = {
 };
 // 圖檔路徑
 // 作品圖（WebP，解析度與原 JPG 相同）與縮圖列專用小圖
-WORKS.greece.forEach((w,i)=>{const b=`images/greece/g${String(i+1).padStart(2,"0")}`;w.src=`${b}.webp`;w.thumb=`${b}-t.webp`});
-WORKS.iceland.forEach((w,i)=>{const b=`images/iceland/i${String(i+2).padStart(2,"0")}`;w.src=`${b}.webp`;w.thumb=`${b}-t.webp`});
+WORKS.greece.forEach((w,i)=>{const b=`${IMG_BASE}images/greece/g${String(i+1).padStart(2,"0")}`;w.src=`${b}.webp`;w.thumb=`${b}-t.webp`});
+WORKS.iceland.forEach((w,i)=>{const b=`${IMG_BASE}images/iceland/i${String(i+2).padStart(2,"0")}`;w.src=`${b}.webp`;w.thumb=`${b}-t.webp`});
 const SET_LABEL = {greece:"Spring 2026 · 春・希臘", iceland:"Summer 2025 · 夏・冰島"};
 
 const $ = id => document.getElementById(id);
